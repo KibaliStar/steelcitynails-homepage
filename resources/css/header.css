@@ -2,7 +2,8 @@
 
 header {
     display: flex;
-    justify-content: flex-start;
+    width: 100%;
+    justify-content: center;
     align-items: center;
 
     .header-container {
@@ -23,20 +24,36 @@ header {
         }
 
         .header-text-side {
+
             .header-studioname {
                 color: var(--color-text-studio-name);
                 font-family: var(--font-studiotitel);
                 font-size: 2rem;
                 font-weight: 500;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
             }
 
             .header-slogan {
                 color: var(--color-text-studio-slogan);
                 font-weight: 700;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
             }
 
             .header-vertrauen {
                 font-weight: 300;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
             }
 
         }
@@ -69,6 +86,15 @@ header {
             .header-text-side {
                 .header-studioname {
                     font-size: 4.5rem;
+                    justify-content: flex-start;
+                }
+
+                .header-slogan {
+                    justify-content: flex-start;
+                }
+
+                .header-vertrauen {
+                    justify-content: flex-start;
                 }
             }
 

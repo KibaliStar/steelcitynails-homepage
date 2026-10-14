@@ -22,8 +22,12 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
     --font-studiotitel: 'ViaodaLibre', serif;
 
+    --text-heading-1: 1.5rem;
+    --text-heading-2: 1.35rem;
+    --text-heading-3: 1.2rem;
+    --text-heading-4: 1.1rem;
+
     /* Farben */
-    
     --color-body-bg: #111111;
     --color-text-primaer: #6b6b6b;
     --color-text-studio-name: #c9a53b;
@@ -31,6 +35,11 @@
     --color-text-link: #795c14;
     --color-text-hover: #947a2c;
     --color-text-active: #dbbe65;
+    --color-heading-1: #c98b3b;
+    --color-heading-2: #b67e35;
+    --color-heading-3: #b67e35;
+    --color-heading-4: #b67e35;
+    --color-border: #5a5a5a;
 }
 
 :root {
@@ -40,13 +49,13 @@
     --logoTuerkis: #1d958b;
     --logoRot: #eb0000;
 
-    --border: #5a5a5a;
     --gap: 1rem;
     --contentWidth: 320px;
+    --faqFieldset: #3a3a3a;
+
     --h1color: #c98b3b;
     --h2color: #b67e35;
     --h3color: #b67e35;
-    --faqFieldset: #3a3a3a;
 
     --h1Size: 1.5rem;
     --h2Size: 1.35rem;
@@ -71,7 +80,7 @@ body {
     position: relative;
     z-index: 1;
 
-        &::before {
+    &::before {
         content: "";
         position: absolute;
         top: 0;
@@ -90,6 +99,70 @@ body {
         pointer-events: none;
         z-index: -1;
         filter: grayscale(100%) contrast(120%);
+    }
+}
+
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+h1 {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: var(--color-heading-1);
+    text-shadow: 2px 4px 4px hsla(0, 0%, 100%, 0.3);
+    margin: 0 auto 8px auto;
+    font-size: var(--text-heading-1);
+
+    &::before {
+        content: "» ";
+        color: var(--color-border);
+        margin-right: 0.25rem;
+    }
+}
+
+h2 {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: var(--color-heading-2);
+    margin: 0 auto 6px auto;
+    font-size: var(--text-heading-2);
+
+    &::before {
+        content: "› ";
+        color: var(--color-border);
+        margin-right: 0.25rem;
+    }
+}
+
+h3 {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: var(--color-heading-3);
+    margin: 0 auto 4px auto;
+    font-size: var(--text-heading-3);
+}
+
+h4 {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: var(--color-heading-4);
+    margin: 0 auto 2px auto;
+    font-size: var(--text-heading-4);
+}
+
+.linkgeschuetzt {
+    color: var(--color-text-link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--color-text-hover);
     }
 }
 

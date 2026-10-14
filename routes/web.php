@@ -8,7 +8,9 @@ Route::get('/piercing', fn() => view('piercing'))->name('piercing');
 Route::get('/galerie', fn() => view('galerie'))->name('galerie');
 Route::get('/studio', fn() => view('studio'))->name('studio');
 Route::get('/anfrage', fn() => view('anfrage'))->name('anfrage');
+Route::get('/termin', fn() => view('termin'))->name('termin');
 Route::get('/kontakt', fn() => view('kontakt'))->name('kontakt');
+Route::get('/anfahrt', fn() => view('anfahrt'))->name('anfahrt');
 
 Route::get('/agb', fn() => view('agb'))->name('agb');
 Route::get('/impressum', fn() => view('impressum'))->name('impressum');

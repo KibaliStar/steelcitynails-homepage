@@ -3,5 +3,5 @@
 @section('title', 'Sitemap')
 
 @section('content')
-    ... dein Sitemap Inhalt ...
+    <h1>Sitemap</h1>
 @endsection
