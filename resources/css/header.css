@@ -1,0 +1,82 @@
+/* ./style/header.css */
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .header-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        align-items: center;
+        color: var(--textPrimaer);
+        font-size: 1.2rem;
+        gap: 1rem;
+
+        img {
+            display: none;
+            width: 10rem;
+            height: 10rem;
+            filter: grayscale(100%) contrast(120%);
+        }
+
+        .header-text-side {
+            .header-studioname {
+                color: var(--color-text-studio-name);
+                font-family: var(--font-studiotitel);
+                font-size: 2rem;
+                font-weight: 500;
+            }
+
+            .header-slogan {
+                color: var(--color-text-studio-slogan);
+                font-weight: 700;
+            }
+
+            .header-vertrauen {
+                font-weight: 300;
+            }
+
+        }
+    }
+}
+
+@media (min-width: 480px) {
+    header {
+        .header-container {
+            .header-text-side {
+                .header-studioname {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+
+    header {
+
+        &::before {
+            display: none;
+            /* Hintergrundbild aus */
+        }
+
+        .header-container {
+
+            .header-text-side {
+                .header-studioname {
+                    font-size: 4.5rem;
+                }
+            }
+
+            img {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {}

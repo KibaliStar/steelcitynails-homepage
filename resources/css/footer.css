@@ -1,0 +1,160 @@
+/* ./style/footer.css */
+
+footer {
+    background: none;
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        color: var(--color-text-primaer);
+        font-size: 1.2rem;
+
+        .footer-studioname {
+            color: var(--color-text-studio-name);
+            font-family: var(--font-studiotitel);
+            font-size: 3rem;
+            font-weight: 500;
+        }
+
+        .footer-studioadresse {}
+
+        .footer-kontakt {}
+
+        .footer-agb-imp-dat {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 1rem;
+            
+                    a {
+                        text-decoration: none;
+                        color: var(--color-text-link);
+                        font-size: 1rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        padding: 0 0.5rem;
+                        height: 1.5rem;
+                        line-height: 1.5rem;
+
+                        &:hover {
+                            color: var(--color-text-hover);
+                        }
+
+                        &:active {
+                            color: var(--color-text-active);
+                        }
+                    }
+
+                    button {
+                        border: none;
+                        box-sizing: unset;
+                        background: none;
+                        color: var(--color-text-link);
+                        font-size: 1rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        padding: 0 0.5rem;
+                        height: 1.5rem;
+                        line-height: 1.5rem;
+
+                        &:hover {
+                            color: var(--color-text-hover);
+                        }
+
+                        &:active {
+                            color: var(--color-text-active);
+                        }
+                    }
+        }
+
+        .footer-copyright {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 1rem 0;
+            font-size: 0.8rem;
+
+            a {
+                text-decoration: none;
+                color: var(--color-text-primaer);
+
+                &:hover {
+                    color: var(--color-text-hover);
+                }
+
+                &:active {
+                    color: var(--color-text-active);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 480px) {
+    footer {
+
+        .footer-container {
+
+            .footer-studioname {}
+
+            .footer-studioadresse {}
+
+            .footer-kontakt {}
+
+            .footer-agb-imp-dat {
+                ul {
+                    li {}
+                }
+            }
+
+            .footer-copyright {}
+        }
+    }
+
+}
+
+@media (min-width: 768px) {
+    footer {
+        background: none;
+
+        .footer-container {
+            font-size: 1rem;
+
+            .footer-studioname {}
+
+            .footer-studioadresse {}
+
+            .footer-kontakt {}
+
+            .footer-agb-imp-dat-mobil {
+                display: none;
+            }
+
+            .footer-agb-imp-dat {
+                display: flex;
+            }
+
+            .footer-copyright {}
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    footer {
+
+        .footer-container {
+
+            .footer-studioname {}
+
+            .footer-studioadresse {}
+
+            .footer-kontakt {}
+
+            .footer-agb-imp-dat {}
+
+            .footer-copyright {}
+        }
+    }
+}

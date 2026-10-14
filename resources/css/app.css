@@ -1,4 +1,15 @@
 @import 'tailwindcss';
+@import './header.css';
+@import './nav.css';
+@import './footer.css';
+
+@font-face {
+    font-family: 'ViaodaLibre';
+    src: url('../fonts/ViaodaLibre-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,6 +17,87 @@
 @source '../**/*.js';
 
 @theme {
+    /* Schriftarten */
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-studiotitel: 'ViaodaLibre', serif;
+
+    /* Farben */
+    
+    --color-body-bg: #111111;
+    --color-text-primaer: #6b6b6b;
+    --color-text-studio-name: #c9a53b;
+    --color-text-studio-slogan: #7e5c07;
+    --color-text-link: #795c14;
+    --color-text-hover: #947a2c;
+    --color-text-active: #dbbe65;
+}
+
+:root {
+    --bodyBgBlau: #111827;
+    --color-text-primaerhell: #999999;
+
+    --logoTuerkis: #1d958b;
+    --logoRot: #eb0000;
+
+    --border: #5a5a5a;
+    --gap: 1rem;
+    --contentWidth: 320px;
+    --h1color: #c98b3b;
+    --h2color: #b67e35;
+    --h3color: #b67e35;
+    --faqFieldset: #3a3a3a;
+
+    --h1Size: 1.5rem;
+    --h2Size: 1.35rem;
+    --h3Size: 1.2rem;
+    --h4Size: 1.1rem;
+
+    --homeWidthMobil: 360px;
+    --homeWidthTab: 480px;
+    --homeWidthDesk: 600px;
+    --homeWidthLarge: 600px;
+}
+
+body {
+    background-color: var(--color-body-bg);
+    height: 100vh;
+    color: var(--color-text-primaer);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+
+        &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background-image: url("/images/bumblebee_tattoo_logo.webp"); */
+        background-image: url("../images/bumblebee_tattoo_logo.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        /* background-size: cover; */
+        background-size: contain;
+        background-attachment: fixed;
+        /* ← Das Bild scrollt NICHT mit */
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: -1;
+        filter: grayscale(100%) contrast(120%);
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        &::before {
+            display: none;
+            /* Hintergrundbild aus */
+        }
+    }
 }
