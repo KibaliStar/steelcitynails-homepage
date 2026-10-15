@@ -103,7 +103,7 @@ body {
 }
 
 main {
-    max-width: 1000px;
+    max-width: var(--contentWidth);
     margin: 2rem auto;
 }
 
@@ -166,11 +166,32 @@ h4 {
     }
 }
 
+@media (min-width: 480px) {
+    :root {
+        --contentWidth: 480px;
+    }
+}
+
 @media (min-width: 768px) {
+    :root {
+        --contentWidth: 768px;
+    }
     body {
         &::before {
             display: none;
             /* Hintergrundbild aus */
         }
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --contentWidth: 800px;
+    }
+}
+
+@media (min-width: 1280px) {
+    :root {
+        --contentWidth: 1000px;
     }
 }

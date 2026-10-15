@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 
 Route::get('/', fn() => view('home'))->name('home');
 Route::get('/tattoo', fn() => view('tattoo'))->name('tattoo');
@@ -17,3 +19,30 @@ Route::get('/impressum', fn() => view('impressum'))->name('impressum');
 Route::get('/datenschutz', fn() => view('datenschutz'))->name('datenschutz');
 Route::get('/faq', fn() => view('faq'))->name('faq');
 Route::get('/sitemap', fn() => view('sitemap'))->name('sitemap');
+
+Route::get('/sitemap.xml', function () {
+    $lastMod = function (string $view): \Carbon\Carbon {
+        $path = resource_path("views/{$view}.blade.php");
+
+        return \Carbon\Carbon::createFromTimestamp(
+            file_exists($path) ? filemtime($path) : time()
+        );
+    };
+
+    return Sitemap::create()
+        ->add(Url::create('/')->setPriority(1.0)->setLastModificationDate($lastMod('home')))
+        ->add(Url::create('/tattoo')->setPriority(0.9)->setLastModificationDate($lastMod('tattoo')))
+        ->add(Url::create('/piercing')->setPriority(0.9)->setLastModificationDate($lastMod('piercing')))
+        ->add(Url::create('/galerie')->setPriority(0.8)->setLastModificationDate($lastMod('galerie')))
+        ->add(Url::create('/studio')->setPriority(0.7)->setLastModificationDate($lastMod('studio')))
+        ->add(Url::create('/anfrage')->setPriority(0.8)->setLastModificationDate($lastMod('anfrage')))
+        ->add(Url::create('/termin')->setPriority(0.8)->setLastModificationDate($lastMod('termin')))
+        ->add(Url::create('/kontakt')->setPriority(0.8)->setLastModificationDate($lastMod('kontakt')))
+        ->add(Url::create('/anfahrt')->setPriority(0.6)->setLastModificationDate($lastMod('anfahrt')))
+        ->add(Url::create('/agb')->setPriority(0.3)->setLastModificationDate($lastMod('agb')))
+        ->add(Url::create('/impressum')->setPriority(0.3)->setLastModificationDate($lastMod('impressum')))
+        ->add(Url::create('/datenschutz')->setPriority(0.3)->setLastModificationDate($lastMod('datenschutz')))
+        ->add(Url::create('/faq')->setPriority(0.7)->setLastModificationDate($lastMod('faq')))
+        ->add(Url::create('/sitemap')->setPriority(0.2)->setLastModificationDate($lastMod('sitemap')))
+        ->toResponse(request());
+});
