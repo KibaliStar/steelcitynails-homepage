@@ -26,6 +26,8 @@
     @cookieconsentview
     @spamprotectKey
     @spamprotectJs
+
+    @yield('scripts')
 </body>
 
 </html>
