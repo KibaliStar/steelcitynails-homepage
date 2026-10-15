@@ -2,6 +2,8 @@
 @import './header.css';
 @import './nav.css';
 @import './footer.css';
+@import './faqfieldset.css';
+@import './kontakt.css';
 
 @font-face {
     font-family: 'ViaodaLibre';
@@ -30,6 +32,7 @@
     /* Farben */
     --color-body-bg: #111111;
     --color-text-primaer: #6b6b6b;
+    --color-text-primaerhell: #999999;
     --color-text-studio-name: #c9a53b;
     --color-text-studio-slogan: #7e5c07;
     --color-text-link: #795c14;
@@ -40,32 +43,17 @@
     --color-heading-3: #b67e35;
     --color-heading-4: #b67e35;
     --color-border: #5a5a5a;
+    --color-faqfieldset: #3a3a3a;
+    --color-logo-rot: #eb0000;
 }
 
 :root {
     --bodyBgBlau: #111827;
-    --color-text-primaerhell: #999999;
 
     --logoTuerkis: #1d958b;
-    --logoRot: #eb0000;
 
     --gap: 1rem;
     --contentWidth: 320px;
-    --faqFieldset: #3a3a3a;
-
-    --h1color: #c98b3b;
-    --h2color: #b67e35;
-    --h3color: #b67e35;
-
-    --h1Size: 1.5rem;
-    --h2Size: 1.35rem;
-    --h3Size: 1.2rem;
-    --h4Size: 1.1rem;
-
-    --homeWidthMobil: 360px;
-    --homeWidthTab: 480px;
-    --homeWidthDesk: 600px;
-    --homeWidthLarge: 600px;
 }
 
 body {
@@ -156,6 +144,25 @@ h4 {
     font-size: var(--text-heading-4);
 }
 
+fieldset {
+    display: block;
+    border: 3px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 2rem 0.2rem 2rem 0;
+    font-size: var(--text-heading-1);
+    width: var(--contentWidth);
+
+    legend {
+        padding: 0 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        font-weight: bold;
+        font-size: var(--text-heading-2);
+        color: var(--color-heading-2);
+    }
+}
+
 .linkgeschuetzt {
     color: var(--color-text-link);
     text-decoration: none;
@@ -163,6 +170,25 @@ h4 {
 
     &:hover {
         color: var(--color-text-hover);
+    }
+}
+
+/* Ein Button */
+.btn {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #b8860b;
+    color: #b8860b;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+
+    &:hover {
+        background-color: #e6b93e;
+        color: #111111;
+        border-color: #e6b93e;
     }
 }
 
@@ -176,6 +202,7 @@ h4 {
     :root {
         --contentWidth: 768px;
     }
+
     body {
         &::before {
             display: none;

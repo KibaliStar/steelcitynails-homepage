@@ -3,5 +3,8 @@
 @section('title', 'Piercing')
 
 @section('content')
-    ... dein Piercing Inhalt ...
+    
+    <h1>Piercing</h1>
+
+    @include('partials.fragenzu')
 @endsection

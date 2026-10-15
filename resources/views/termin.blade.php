@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Termin')
+@section('title', 'Terminanfrage')
 
 @section('content')
-    ... dein Termin Inhalt ...
+    <h1>Terminanfrage</h1>
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Anfrage')
+@section('title', 'Anfrage / Kontaktformular')
 
 @section('content')
-    ... dein Anfrage Inhalt ...
+    <h1>Kontaktformular</h1>
 @endsection

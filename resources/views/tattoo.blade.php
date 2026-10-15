@@ -3,5 +3,8 @@
 @section('title', 'Tattoo')
 
 @section('content')
-    ... dein Tattoo Inhalt ...
+    
+    <h1>Tattoo und CoverUp</h1>
+
+    @include('partials.fragenzu')
 @endsection

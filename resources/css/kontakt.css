@@ -1,0 +1,54 @@
+.div-contact-line {
+    width: 600px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+    .contact-line {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 1rem;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.2rem;
+            width: 3rem;
+            height: 3rem;
+
+            svg {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            &:hover {
+                color: var(--color-text-hover);
+            }
+        }
+
+        .text-link {
+            text-decoration: none;
+            color: var(--color-text-link);
+            font-size: 1.2rem;
+
+            &:hover {
+                color: var(--color-text-hover);
+            }
+        }
+
+        .nur_text {
+            font-size: 1rem;
+            color: var(--color-text);
+        }
+
+        .linkgeschuetzt {
+            font-size: 1.2rem;
+        }
+    }
+}

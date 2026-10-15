@@ -13,8 +13,9 @@
         <a href="impressum">Impressum</a>
         <a href="datenschutz">Datenschutz</a>
         <a href="faq">Fragen & Antworten</a>
+    </div>
+    <div class="footer-agb-imp-dat">
         <a href="sitemap">SiteMap</a>
-        {{-- <button class="cookieReset" type="button">Cookie Einstellung ändern</button> --}}
         @cookieconsentbutton(action: 'reset', label: 'Cookie Einstellung ändern')
     </div>
     <div class="footer-copyright">

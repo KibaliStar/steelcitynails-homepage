@@ -3,5 +3,5 @@
 @section('title', 'Galerie')
 
 @section('content')
-    ... dein Galerie Inhalt ...
+    <h1>Galerie</h1>
 @endsection
