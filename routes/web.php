@@ -9,8 +9,10 @@ Route::get('/tattoo', fn() => view('tattoo'))->name('tattoo');
 Route::get('/piercing', fn() => view('piercing'))->name('piercing');
 Route::get('/galerie', fn() => view('galerie'))->name('galerie');
 Route::get('/studio', fn() => view('studio'))->name('studio');
-Route::get('/anfrage', fn() => view('anfrage'))->name('anfrage');
-Route::get('/termin', fn() => view('termin'))->name('termin');
+// Route::get('/anfrage', fn() => view('anfrage'))->name('anfrage');
+Route::get('/anfrage/{thema?}', function ($thema = 'tattoo') {
+    return view('anfrage', ['thema' => $thema]);
+})->where('thema', 'tattoo|piercing|allgemein')->name('anfrage');
 Route::get('/kontakt', fn() => view('kontakt'))->name('kontakt');
 Route::get('/anfahrt', fn() => view('anfahrt'))->name('anfahrt');
 

@@ -35,7 +35,6 @@
         <li><a href="{{ route('galerie') }}">Galerie</a></li>
         <li><a href="{{ route('studio') }}">Studio</a></li>
         <li><a href="{{ route('anfrage') }}">Anfrage</a></li>
-        <li><a href="{{ route('termin') }}">Termin</a></li>
         <li><a href="{{ route('kontakt') }}">Kontakt</a></li>
         <li><a href="{{ route('anfahrt') }}">Anfahrt</a></li>
     </ul>

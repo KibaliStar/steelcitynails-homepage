@@ -26,8 +26,8 @@
                 gap: 16px;
 
                 /* a {
-                                    font-size: 1.5rem;
-                                } */
+                                            font-size: 1.5rem;
+                                        } */
 
                 .icon {
                     /* display: none; */
@@ -208,6 +208,7 @@
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('js/homeslider.js') }}" defer></script>
 @endsection
 
 @section('content')
@@ -249,7 +250,10 @@
                     </g>
                 </svg>
             </div>
-            <p>oder nutze das Online <br><a href="termin">Kontaktformular</a></p>
+            <p>
+                oder nutze das Online <br>
+                <a href="{{ route('anfrage', ['thema' => 'tattoo']) }}">Kontaktformular</a>
+            </p>
         </div>
     </fieldset>
 
@@ -259,7 +263,7 @@
             <!-- Bilder werden per JavaScript eingefügt -->
         </div>
     </a>
-    
+
 
     <div class="absatz">
         <h2>Wir machen aus deiner Idee ein handfestes Kunstwerk.</h2>
@@ -277,7 +281,7 @@
             <img src="{{ asset('images/tiger.webp') }}" alt="Tiger von Bumblebee Tattoo">
             <div class="buchText">
                 <p>Tippe um eine Anfrage zu stellen, deine Beratung oder dein Tattoo zu buchen.</p>
-                <a class="btn" href="termin">Jetzt Termin anfragen</a>
+                <a class="btn" href="{{ route('anfrage', ['thema' => 'tattoo']) }}">Jetzt Termin anfragen</a>
             </div>
         </div>
     </fieldset>

@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "hash": ["tattoo"],
+        "src": "galerieimages/bild001.webp",
+        "alt": "Tattoo Bild 1"
+    },
+    {
+        "id": 2,
+        "hash": ["tattoo", "piercing"],
+        "src": "galerieimages/bild002.webp",
+        "alt": "Tattoo Bild 2"
+    }
+]
