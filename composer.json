@@ -9,6 +9,7 @@
         "php": "^8.2",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
+        "resend/resend-laravel": "^1.7",
         "spatie/laravel-sitemap": "^8.0",
         "whitecube/laravel-cookie-consent": "*",
         "yannkuesthardt/laravel-spamprotect": "^3.1"

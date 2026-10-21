@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
+use App\Http\Controllers\KontaktController;
 
 Route::get('/', fn() => view('home'))->name('home');
 Route::get('/tattoo', fn() => view('tattoo'))->name('tattoo');
@@ -48,3 +49,5 @@ Route::get('/sitemap.xml', function () {
         ->add(Url::create('/sitemap')->setPriority(0.2)->setLastModificationDate($lastMod('sitemap')))
         ->toResponse(request());
 });
+
+Route::post('/kontakt/senden', [KontaktController::class, 'senden'])->name('kontakt.senden');
