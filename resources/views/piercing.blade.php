@@ -5,22 +5,23 @@
 @section('styles')
     <style>
         .bucheJetzt {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 1.5rem;
 
             .zeileTelForm {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
                 align-items: center;
-                gap: 16px;
-
-                /* a {
-                                                        font-size: 1.5rem;
-                                                    } */
+                gap: 1.5rem;
 
                 .icon {
-                    /* display: none; */
                     width: 48px;
                     height: 48px;
+                    flex-shrink: 0;
 
                     svg {
                         color: var(--color-text-studio-slogan);
@@ -44,6 +45,136 @@
                 }
             }
 
+        }
+
+        .aktPiercer {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            row-gap: 1rem;
+
+            .zeileAktPiercer {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 16px;
+
+                .icon {
+                    /* display: none; */
+                    width: 48px;
+                    height: 48px;
+                    margin: 24px;
+
+                    svg {
+                        color: var(--color-text-studio-slogan);
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .image {
+                    width: 96px;
+                    filter: grayscale(100%);
+                }
+
+                p {
+                    text-align: left;
+                    font-size: var(--text-heading-4);
+                    margin: 0.5rem 0;
+
+                    a {
+                        color: var(--color-text-link);
+
+                        &:hover {
+                            color: var(--color-text-hover);
+                        }
+                    }
+
+                    .piercerName {
+                        font-size: 24px;
+                        font-weight: 600;
+                        color: var(--color-text-primaerhell);
+                    }
+                }
+            }
+
+        }
+
+        .aktPreisliste {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 1rem;
+
+            .beinhaltet {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+
+                .itemPiercing {
+                    border: 1px solid var(--color-border);
+                    margin: 0.25rem;
+                    padding: 0.5rem 1.5rem;
+                    color: var(--color-text-primaerhell);
+                }
+            }
+
+            .aktPreise {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                width: 100%;
+
+                .tableContainer {
+                    width: 45%;
+                    margin: 0.5rem 1rem;
+
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        /* wichtig, damit keine Standard-Abstände/Linien */
+
+                        tr {
+                            background-color: var(--color-tab-dunkel);
+                            height: 44px;
+
+                            &:nth-child(even) {
+                                background-color: var(--color-tab-hell);
+                                /* jede 2. Zeile grau */
+                            }
+
+                            th {
+                                font-size: 24px;
+                                font-weight: 600;
+                                color: var(--color-text-primaerhell);
+                                background-color: var(--color-body-bg);
+                                text-align: left;
+                                padding: 0.25rem 0 0.25rem 1rem;
+                            }
+
+                            td {
+                                border: none;
+                                padding: 0.25rem 0.5rem;
+
+                                &:first-child {
+                                    text-align: left;
+                                    /* 1. td linksbündig */
+                                }
+
+                                &:last-child {
+                                    text-align: right;
+                                    /* 2. td rechtsbündig */
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .fieldPartnerLogo {
@@ -91,6 +222,19 @@
             }
 
         }
+
+        @media (max-width: 767px) {
+            .aktPreisliste {
+
+                .aktPreise {
+
+                    .tableContainer {
+                        width: 100%;
+
+                    }
+                }
+            }
+        }
     </style>
 @endsection
 
@@ -113,8 +257,10 @@
                 Schreib mich per Whatsapp oder SMS an unter <br>
                 <x-encrypt-phone phone="+49 157 850 672 49" class="linkgeschuetzt" />
                 <br>
-                <span class="text-sm leading-none">
-                    Schreib bitte: Deinen Namen, Alter, Körperstelle, Art/Form des Piercings, bis wann?
+                <span class="text-base leading-none">
+                    <b>Schreib bitte: </b>
+                    <br>
+                    Deinen Namen, Alter, Körperstelle, Art/Form des Piercings, bis wann?
                 </span>
             </p>
         </div>
@@ -137,10 +283,190 @@
         </div>
     </fieldset>
 
+    <fieldset class="aktPiercer">
+        <legend>Unsere Piercer</legend>
+        <div class="zeileAktPiercer">
+            <div class="image">
+                <img src="{{ asset('images/MarcoBunt.avif') }}"
+                    alt="Marco - Zertifizierter Piercer seit 11/2024 und seit 2017 bei Bumblebee Tattoo Eisenhüttenstadt">
+            </div>
+            <p>
+                <span class="piercerName">Marco</span>
+                <br>
+                Zertifizierter Piercer seit 11/2024 und seit 2017 bei Bumblebee Tattoo Eisenhüttenstadt
+            </p>
+        </div>
+        <div class="zeileAktPiercer">
+            <div class="image">
+                <img src="{{ asset('images/Franziska.avif') }}"
+                    alt="Franziska -  Zertifizierte Piercerin seit 11/2024 bei Bumblebee Tattoo Eisenhüttenstadt">
+            </div>
+            <p>
+                <span class="piercerName">Franziska</span>
+                <br>
+                Zertifizierte Piercerin seit 11/2024 bei Bumblebee Tattoo Eisenhüttenstadt
+                <br>
+                ( Zur Zeit nicht im Studio )
+            </p>
+        </div>
+    </fieldset>
+
+    <fieldset class="aktPreisliste">
+        <legend>Piercing Preisliste</legend>
+        <div class="beinhaltet">
+            <p style="width: 100%">Im Piercing-Preis sind immer enthalten: </p>
+            <div class="itemPiercing">steriler Piercingschmuck</div>
+            <div class="itemPiercing">Pflegemittel</div>
+            <div class="itemPiercing">Pflegeanleitung</div>
+        </div>
+        <div class="aktPreise">
+            <p style="width: 100%">Preise nach Körperstelle des Piercings: </p>
+            <div class="tableContainer">
+                <table>
+                    <tr>
+                        <th colspan="2">Am Ohr</th>
+                    </tr>
+                    <tr>
+                        <td>Helix</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Forw. Helix</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Flat</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Rook</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Daith</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Conch</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Tragus</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Lobe</td>
+                        <td>1x 35 €, 2x 50€</td>
+                    </tr>
+                    <tr>
+                        <td>Snug</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Anti Tragus</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Industrial</td>
+                        <td>50 €</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tableContainer">
+                <table>
+                    <tr>
+                        <th colspan="2">Im Gesicht</th>
+                    </tr>
+                    <tr>
+                        <td>Augenbraue</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Nasenbridge</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Nostril</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Septum</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Medusa</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Madonna</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Lippenband</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Zunge</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Lippe</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Snakebites</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Eskimo</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Jestrum</td>
+                        <td>35 €</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tableContainer">
+                <table>
+                    <tr>
+                        <th colspan="2">Am Körper</th>
+                    </tr>
+                    <tr>
+                        <td>Brustwarze</td>
+                        <td>35 €</td>
+                    </tr>
+                    <tr>
+                        <td>Bauchnabel</td>
+                        <td>35 €</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tableContainer">
+                <table>
+                    <tr>
+                        <th colspan="2">Intim</th>
+                    </tr>
+                    <tr>
+                        <td>Intim Sie</td>
+                        <td>ab 70€</td>
+                    </tr>
+                    <tr>
+                        <td>Intim Er</td>
+                        <td>ab 90 €</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </fieldset>
+
     <fieldset class="fieldPartnerLogo">
         <legend>Nur erstklassige Hersteller für beste Qualität</legend>
         <div class="zeilePartnerLogo">
-            <p>Unsere Piercing Partnerfirmen:</p>
+            <span class="text-2xl text-text-studio-slogan">Unsere Piercing Partnerfirmen:</span>
         </div>
         <div class="partnerLogos">
             <img src="{{ asset('partnerimages/trust_logo.png') }}" alt="Trust Tools & Products">

@@ -5,18 +5,24 @@
 @section('styles')
     <style>
         .bucheJetzt {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 1.5rem;
+
 
             .zeileTelForm {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
                 align-items: center;
-                gap: 16px;
+                gap: 1.5rem;
 
                 .icon {
-                    /* display: none; */
                     width: 48px;
                     height: 48px;
+                    flex-shrink: 0;
 
                     svg {
                         color: var(--color-text-studio-slogan);
@@ -40,6 +46,79 @@
                 }
             }
 
+        }
+
+        .aktTaetowierer {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            row-gap: 1rem;
+
+            .zeileAktTaetowierer {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 16px;
+
+                .icon {
+                    /* display: none; */
+                    width: 48px;
+                    height: 48px;
+                    margin: 24px;
+
+                    svg {
+                        color: var(--color-text-studio-slogan);
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .image {
+                    width: 96px;
+                    filter: grayscale(100%);
+                }
+
+                p {
+                    text-align: left;
+                    font-size: var(--text-heading-4);
+                    margin: 0.5rem 0;
+
+                    a {
+                        color: var(--color-text-link);
+
+                        &:hover {
+                            color: var(--color-text-hover);
+                        }
+                    }
+
+                    .taetowiererName {
+                        font-size: 24px;
+                        font-weight: 600;
+                        color: var(--color-text-primaerhell);
+                    }
+                }
+            }
+
+        }
+
+        .preisbildungContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+
+            p {
+                font-size: 1rem;
+
+                a {
+                    color: var(--color-text-link);
+
+                    &:hover {
+                        color: var(--color-text-hover);
+                    }
+                }
+            }
         }
 
         .fieldPartnerLogo {
@@ -108,8 +187,10 @@
                 Schreib mich per Whatsapp oder SMS an unter <br>
                 <x-encrypt-phone phone="+49 157 850 672 49" class="linkgeschuetzt" />
                 <br>
-                <span class="text-sm leading-none">
-                    Schreib bitte: Deinen Namen, Alter, Wunschmotiv (Bilder), Körperstelle, Größe, Farbe, bis wann?,
+                <span class="text-base leading-none">
+                    <b>Schreib mir bitte: </b>
+                    <br>
+                    Deinen Namen, Alter, Wunschmotiv (Bilder), Körperstelle, Größe, Farbe, bis wann?,
                     Preisvorstellung
                 </span>
             </p>
@@ -133,10 +214,86 @@
         </div>
     </fieldset>
 
+    <fieldset class="aktTaetowierer">
+        <legend>Unsere Tätowierer</legend>
+        <div class="zeileAktTaetowierer">
+            <div class="image">
+                <img src="{{ asset('images/MarcoBunt.avif') }}"
+                    alt="Marco Tätowierer seit 2017 bei Bumblebee Tattoo Eisenhüttenstadt">
+            </div>
+            <p>
+                <span class="taetowiererName">Marco</span>
+                <br>
+                Ausgebildeter Tätowierer seit 10/2017.
+                <br>
+                <b>Stilrichtungen:</b> Black & Gray, Fineline, Traditional, Old School, Aquarell, Dotwork, Trash Polka,
+                Comic, Tribal u.a.
+                <br>
+                <b>Was ich ablehne:</b> fotorealistische Gesichter
+            </p>
+        </div>
+        <div class="zeileAktTaetowierer">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 15 15">
+                    <path d="M0 0h15v15H0z" fill="none" />
+                    <path fill="currentColor"
+                        d="M8.55 2.03a3.006 3.006 0 0 1 4.19-.67c.23.17.28.48.11.7c-.16.23-.47.28-.69.11c-.9-.65-2.15-.45-2.8.45l5.26 3.82c.22.16.27.47.11.69c-.16.23-.47.28-.7.12l-.4-.3l-1.77 2.43l-.4-.3l-.59.81l.81.59c.22.16.27.48.11.7s-.47.27-.7.11L5.84 7.47l-.59.81l.4.29a.5.5 0 0 1 .11.7l-2.35 3.24c-.16.22-.47.27-.7.11l-.4-.3l-.59.81l-1.58 1.33l.77-1.91l.59-.81l-.41-.3a.506.506 0 0 1-.11-.7l2.36-3.23c.16-.23.47-.27.69-.11l.41.29l.59-.81l-1.62-1.17l-.3.4c-.16.22-.47.27-.69.11l-.81-.59a.48.48 0 0 1-.11-.69l1.17-1.62a.49.49 0 0 1 .7-.11l.81.58c.22.17.27.48.11.7L4 4.9l1.61 1.17l2.36-3.23l-.41-.3a.506.506 0 0 1-.11-.7c.16-.22.47-.27.7-.11zm.22 1.39L6.42 6.66l1.22.88l.58-.81l-.4-.29l1.76-2.43zm3.24 2.36l-.81-.59l-1.76 2.43l-.41-.3l-.58.81l1.61 1.18l.59-.81l-.4-.3z" />
+                </svg>
+            </div>
+            <p>
+                Zur Zeit keine Gast-Tätowierer
+            </p>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Preisbildung</legend>
+        <div class="preisbildungContainer">
+            <span class="text-2xl text-text-studio-slogan">Wie setzen sich unsere Preise zusammen?</span>
+            <p>
+                Auch bei einem noch so kleinen Tattoo steckt ein erheblicher Aufwand - das eigentliche Stechen macht nur
+                einen
+                Teil davon aus. Aus diesem Grund berechnen wir grundsätzlich mindestens eine Stunde, auch wenn das Stechen
+                selbst
+                weniger Zeit in Anspruch nimmt.
+            </p>
+            <p>
+                Der Mindestpreis - also der Preis für eine Stunde - liegt bei 60 € für Black &amp; Gray und bei 80 € für
+                farbige
+                Tattoos.
+            </p>
+            <p>
+                Wie viel Zeit ich einplanen und entsprechend berechnen muss, hängt stark von der Größe, dem Stil und der
+                Körperstelle ab. Nicht immer lässt sich bequem sitzen; häufig ist es nötig, sich über den Körper zu beugen,
+                was
+                zusätzliche Pausen erforderlich macht. Bei Halstattoos kann ich die Maschine oft nicht senkrecht halten -
+                die Tinte
+                fließt dann schlechter, und ich muss langsamer arbeiten.
+            </p>
+            <p>
+                Selbstverständlich sind Preise immer Verhandlungssache: Stammkunden, schöne Motive oder freie Termine können
+                den
+                Preis durchaus senken. Bedenken Sie jedoch, dass gute Qualität nicht nebenbei entsteht - ein Tattoo soll
+                schließlich
+                für die Ewigkeit sein. Ich nenne einen Preis nicht ohne Grund; allzu oft schätze ich den Aufwand selbst zu
+                gering
+                ein. Ein Preisangebot, das ich Ihnen nenne, ist für mich 14 Tage verbindlich. Eine Preisanfrage für ein
+                Tattoo, das
+                erst in einigen Monaten gestochen werden soll, ist für uns beide wenig sinnvoll.
+            </p>
+            <p>
+                Wenn Sie mehr wissen möchten, nutzen Sie gerne das <a href="anfrage">Kontaktformular</a> oder werfen Sie
+                einen Blick in den
+                Bereich <a href="faq">Fragen
+                    &amp; Antworten</a>.
+            </p>
+        </div>
+    </fieldset>
+
     <fieldset class="fieldPartnerLogo">
         <legend>Nur erstklassige Hersteller für beste Qualität</legend>
         <div class="zeilePartnerLogo">
-            <p>Unsere Tattoo Partnerfirmen:</p>
+            <span class="text-2xl text-text-studio-slogan">Unsere Tattoo Partnerfirmen:</span>
         </div>
         <div class="partnerLogos">
             <img src="{{ asset('partnerimages/killerink_logo.png') }}" alt="Killerink Tattoo Bedarf">

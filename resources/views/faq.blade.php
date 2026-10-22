@@ -53,7 +53,7 @@
             <li><b>Mindesgebühr:</b> 60€</li>
             <li><b>Stundensatz:</b> 60-80€ (variiert ja nach Aufwand)</li>
             <li><b>Pauschalpreis:</b> Verfügbar für Großprojekte wie Ärmel und Rückenteile</li>
-            <li><b>Zahlungsart:</b> Bar oder bereit vor dem Termin komplett per Wero oder Überweisung</li>
+            <li><b>Zahlungsart:</b> Bar oder bereits vor dem Termin komplett per Wero oder Überweisung</li>
             <li><b>Anzahlung:</b> 20-25% der Gesamtsumme, benötigt zur Terminvereinbarung</li>
         </ul>
         <p>Alle Preise werden während Ihrer Beratung basierend auf Größe, Stil, Plazierung und benötigter Zeit besprochen.

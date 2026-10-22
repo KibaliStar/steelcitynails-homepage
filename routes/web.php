@@ -50,4 +50,6 @@ Route::get('/sitemap.xml', function () {
         ->toResponse(request());
 });
 
-Route::post('/kontakt/senden', [KontaktController::class, 'senden'])->name('kontakt.senden');
+Route::post('/kontakt/senden', [KontaktController::class, 'senden'])
+    ->middleware('throttle:5,1') // 5 Anfragen pro Minute (pro IP)
+    ->name('kontakt.senden');
