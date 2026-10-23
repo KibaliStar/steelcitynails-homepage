@@ -2,6 +2,9 @@
 
 @section('title', 'Piercing')
 
+@section('description',
+    'Piercing in Eisenhüttenstadt: Immer inklusive sterilem Schmuck, Pflegemittel und Pflegeanleitung.')
+
 @section('styles')
     <style>
         .bucheJetzt {

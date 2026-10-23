@@ -2,6 +2,9 @@
 
 @section('title', 'FAQ')
 
+@section('description',
+    'Tattoo und Piercing in Eisenhüttenstadt, hier findest du Antworten auf die meisten Fragen.')
+
 @section('styles')
     <style>
         .question {

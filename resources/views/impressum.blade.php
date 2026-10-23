@@ -2,6 +2,9 @@
 
 @section('title', 'Impressum')
 
+@section('description',
+    'Tattoo und Piercing in Eisenhüttenstadt, hier findest du unser Impressum.')
+
 @section('content')
     <h1>Impressum</h1>
 

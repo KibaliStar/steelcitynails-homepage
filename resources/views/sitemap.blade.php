@@ -2,6 +2,9 @@
 
 @section('title', 'Sitemap')
 
+@section('description',
+    'Tattoo und Piercing in Eisenhüttenstadt, eine Sitemap zur schnellen Orientierung.')
+
 @section('styles')
     <style>
         ul {

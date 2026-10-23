@@ -2,6 +2,9 @@
 
 @section('title', 'Anfahrt')
 
+@section('description',
+    'Tattoo und Piercing in Eisenhüttenstadt, so findest du unser Studio.')
+
 @section('content')
     <h1>Anfahrt</h1>
     <iframe width="90%" height="400" id="gmap_canvas"

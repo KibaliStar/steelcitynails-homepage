@@ -2,6 +2,9 @@
 
 @section('title', 'AGB')
 
+@section('description',
+    'Tattoo und Piercing in Eisenhüttenstadt, hier findest du unsere AGB.')
+
 @section('styles')
     <style>
         a {

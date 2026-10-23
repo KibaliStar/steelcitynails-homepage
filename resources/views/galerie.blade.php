@@ -2,6 +2,9 @@
 
 @section('title', 'Galerie')
 
+@section('description',
+    'Tattoo und Piercing in Eisenhüttenstadt, hier findest du eine Galerie mit ausgewählten Arbeiten')
+
 @section('styles')
     <style>
         .card-content-image {

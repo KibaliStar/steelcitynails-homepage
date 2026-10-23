@@ -2,6 +2,9 @@
 
 @section('title', 'Datenschutz')
 
+@section('description',
+    'Tattoo und Piercing in Eisenhüttenstadt, hier findest du Angaben zum Datenschutz.')
+
 @section('styles')
     <style>
         a {

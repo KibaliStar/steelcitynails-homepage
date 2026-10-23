@@ -2,6 +2,10 @@
 
 @section('title', 'Tattoo')
 
+@section('description',
+    'Transparente Preise für Tattoos in Eisenhüttenstadt: Mindestpreis 60 € für Black & Gray,
+    80 € für farbige Tattoos. Jetzt informieren.')
+
 @section('styles')
     <style>
         .bucheJetzt {
