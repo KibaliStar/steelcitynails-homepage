@@ -26,8 +26,8 @@
                 gap: 16px;
 
                 /* a {
-                                            font-size: 1.5rem;
-                                        } */
+                                                font-size: 1.5rem;
+                                            } */
 
                 .icon {
                     /* display: none; */
@@ -51,6 +51,8 @@
 
                         &:hover {
                             color: var(--color-text-hover);
+                            text-decoration: underline;
+                            text-underline-offset: 3px;
                         }
                     }
                 }

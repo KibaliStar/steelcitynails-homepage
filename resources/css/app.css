@@ -31,19 +31,24 @@
 
     /* Farben */
     --color-body-bg: #111111;
-    --color-text-primaer: #6b6b6b;
+    --color-text-primaer: #848484;
+    /* #6b6b6b; */
     --color-text-primaerhell: #999999;
     --color-text-studio-name: #c9a53b;
     --color-text-studio-slogan: #7e5c07;
-    --color-text-link: #795c14;
-    --color-text-hover: #947a2c;
+    /* --color-text-link: #795c14;
+    --color-text-hover: #947a2c;     */
+    --color-text-link: #B87D3E;
+    --color-text-hover: #D69A58;
+    --color-text-faq-link: #C58C4D;
+    --color-text-faq-hover: #D69A58;
     --color-text-active: #dbbe65;
     --color-heading-1: #c98b3b;
-    --color-heading-2: #b67e35;
+    --color-heading-2: #d69e55;
     --color-heading-3: #b67e35;
     --color-heading-4: #b67e35;
     --color-border: #5a5a5a;
-    --color-faqfieldset: #3a3a3a;
+    --color-faqfieldset: #2A2A2A;
     --color-tab-hell: #4a4a4a;
     --color-tab-dunkel: #3a3a3a;
     --color-logo-rot: #eb0000;
@@ -172,6 +177,8 @@ fieldset {
 
     &:hover {
         color: var(--color-text-hover);
+        text-decoration: underline;
+        text-underline-offset: 3px;
     }
 }
 

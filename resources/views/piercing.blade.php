@@ -43,6 +43,8 @@
 
                         &:hover {
                             color: var(--color-text-hover);
+                            text-decoration: underline;
+                            text-underline-offset: 3px;
                         }
                     }
                 }
@@ -92,6 +94,8 @@
 
                         &:hover {
                             color: var(--color-text-hover);
+                            text-decoration: underline;
+                            text-underline-offset: 3px;
                         }
                     }
 
@@ -199,6 +203,8 @@
 
                         &:hover {
                             color: var(--color-text-hover);
+                            text-decoration: underline;
+                            text-underline-offset: 3px;
                         }
                     }
                 }

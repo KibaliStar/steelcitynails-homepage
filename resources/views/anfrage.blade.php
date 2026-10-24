@@ -10,7 +10,7 @@
     <style>
         .anfrageformular {
             margin: 1rem 0;
-            max-width: 800px;
+            width: var(--contentWidth);
             margin-left: auto;
             margin-right: auto;
 
@@ -302,23 +302,23 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Vorname</label>
-                        <input type="text" name="vorname" value="{{ old('vorname') }}">
+                        <label for="tattoo_vorname">Vorname</label>
+                        <input id="tattoo_vorname" type="text" name="vorname" value="{{ old('vorname') }}">
                     </div>
                     <div class="form-group">
-                        <label>Nachname</label>
-                        <input type="text" name="nachname" value="{{ old('nachname') }}">
+                        <label for="tattoo_nachname">Nachname</label>
+                        <input id="tattoo_nachname" type="text" name="nachname" value="{{ old('nachname') }}">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>E-Mail</label>
-                        <input type="email" name="email" value="{{ old('email') }}">
+                        <label for="tattoo_email">E-Mail</label>
+                        <input id="tattoo_email" type="email" name="email" value="{{ old('email') }}">
                     </div>
                     <div class="form-group">
-                        <label>Telefonnummer *</label>
-                        <input type="tel" name="telefon" value="{{ old('telefon') }}" required>
+                        <label for="tattoo_telefon">Telefonnummer *</label>
+                        <input id="tattoo_telefon" type="tel" name="telefon" value="{{ old('telefon') }}" required>
                     </div>
                 </div>
 
@@ -331,8 +331,8 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Stil</label>
-                        <select name="stil">
+                        <label for="tattoo_stil">Stil</label>
+                        <select  id="tattoo_stil" name="stil">
                             <option value="">Bitte wählen...</option>
                             <option value="Unentschlossen" {{ old('stil') == 'Unentschlossen' ? 'selected' : '' }}>
                                 Unentschlossen</option>
@@ -345,30 +345,30 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Körperstelle</label>
-                        <input type="text" name="koerperstelle" value="{{ old('koerperstelle') }}">
+                        <label for="tattoo_koerperstelle">Körperstelle</label>
+                        <input id="tattoo_koerperstelle" type="text" name="koerperstelle" value="{{ old('koerperstelle') }}">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Größe (Breite x Höhe)</label>
-                        <input type="text" name="groesse" placeholder="z.B. 10x15 cm" value="{{ old('groesse') }}">
+                        <label for="tattoo_groesse">Größe (Breite x Höhe)</label>
+                        <input id="tattoo_groesse" type="text" name="groesse" placeholder="z.B. 10x15 cm" value="{{ old('groesse') }}">
                     </div>
                     <div class="form-group">
-                        <label>Bis wann fertig?</label>
-                        <input type="date" name="wunschtermin" min="{{ date('Y-m-d') }}" value="{{ old('wunschtermin') }}">
+                        <label for="tattoo_bis_wann">Bis wann fertig?</label>
+                        <input id="tattoo_bis_wann" type="date" name="wunschtermin" min="{{ date('Y-m-d') }}" value="{{ old('wunschtermin') }}">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Erzähle uns von deiner Tattoo Idee</label>
-                    <textarea name="nachricht" rows="4">{{ old('nachricht') }}</textarea>
+                    <label for="tattoo_idee">Erzähle uns von deiner Tattoo Idee</label>
+                    <textarea id="tattoo_idee" name="nachricht" rows="4">{{ old('nachricht') }}</textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>Bilder hochladen (max. 5 Bilder)</label>
-                    <input type="file" name="bilder[]" multiple accept="image/*" style="padding: 4px;">
+                    <label for="tattoo_bilder">Bilder hochladen (max. 5 Bilder)</label>
+                    <input id="tattoo_bilder" type="file" name="bilder[]" multiple accept="image/*" style="padding: 4px;">
                     <small>Bilder werden vor dem Upload automatisch verkleinert.</small>
                 </div>
             </fieldset>
@@ -380,23 +380,23 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Vorname</label>
-                        <input type="text" name="vorname" value="{{ old('vorname') }}">
+                        <label for="piercing_vorname">Vorname</label>
+                        <input id="piercing_vorname" type="text" name="vorname" value="{{ old('vorname') }}">
                     </div>
                     <div class="form-group">
-                        <label>Nachname</label>
-                        <input type="text" name="nachname" value="{{ old('nachname') }}">
+                        <label for="piercing_nachname">Nachname</label>
+                        <input id="piercing_nachname" type="text" name="nachname" value="{{ old('nachname') }}">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>E-Mail</label>
-                        <input type="email" name="email" value="{{ old('email') }}">
+                        <label for="piercing_email">E-Mail</label>
+                        <input id="piercing_email" type="email" name="email" value="{{ old('email') }}">
                     </div>
                     <div class="form-group">
-                        <label>Telefonnummer *</label>
-                        <input type="tel" name="telefon" value="{{ old('telefon') }}" required>
+                        <label for="piercing_telefon">Telefonnummer *</label>
+                        <input id="piercing_telefon" type="tel" name="telefon" value="{{ old('telefon') }}" required>
                     </div>
                 </div>
 
@@ -409,23 +409,23 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Körperstelle</label>
-                        <input type="text" name="koerperstelle" value="{{ old('koerperstelle') }}">
+                        <label for="piercing_koerperstelle">Körperstelle</label>
+                        <input id="piercing_koerperstelle" type="text" name="koerperstelle" value="{{ old('koerperstelle') }}">
                     </div>
                     <div class="form-group">
-                        <label>Art des Piercings</label>
-                        <input type="text" name="piercing_art" value="{{ old('piercing_art') }}">
+                        <label for="piercing_art">Art des Piercings</label>
+                        <input id="piercing_art" type="text" name="piercing_art" value="{{ old('piercing_art') }}">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Bis wann fertig?</label>
-                    <input type="date" name="wunschtermin" min="{{ date('Y-m-d') }}" value="{{ old('wunschtermin') }}">
+                    <label for="piercing_bis_wann">Bis wann fertig?</label>
+                    <input id="piercing_bis_wann" type="date" name="wunschtermin" min="{{ date('Y-m-d') }}" value="{{ old('wunschtermin') }}">
                 </div>
 
                 <div class="form-group">
-                    <label>Erzähle uns von deiner Piercing Idee</label>
-                    <textarea name="nachricht" rows="4">{{ old('nachricht') }}</textarea>
+                    <label for="piercing_idee">Erzähle uns von deiner Piercing Idee</label>
+                    <textarea id="piercing_idee" name="nachricht" rows="4">{{ old('nachricht') }}</textarea>
                 </div>
             </fieldset>
 
@@ -436,23 +436,23 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Vorname</label>
-                        <input type="text" name="vorname" value="{{ old('vorname') }}">
+                        <label for="allgemein_vorname">Vorname</label>
+                        <input id="allgemein_vorname" type="text" name="vorname" value="{{ old('vorname') }}">
                     </div>
                     <div class="form-group">
-                        <label>Nachname</label>
-                        <input type="text" name="nachname" value="{{ old('nachname') }}">
+                        <label for="allgemein_nachname">Nachname</label>
+                        <input id="allgemein_nachname" type="text" name="nachname" value="{{ old('nachname') }}">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>E-Mail</label>
-                        <input type="email" name="email" value="{{ old('email') }}">
+                        <label for="allgemein_email">E-Mail</label>
+                        <input id="allgemein_email" type="email" name="email" value="{{ old('email') }}">
                     </div>
                     <div class="form-group">
-                        <label>Telefonnummer *</label>
-                        <input type="tel" name="telefon" value="{{ old('telefon') }}" required>
+                        <label for="allgemein_telefon">Telefonnummer *</label>
+                        <input id="allgemein_telefon" type="tel" name="telefon" value="{{ old('telefon') }}" required>
                     </div>
                 </div>
 
@@ -464,8 +464,8 @@
                 <hr class="trennlinie">
 
                 <div class="form-group">
-                    <label>Deine Nachricht</label>
-                    <textarea name="nachricht" rows="4">{{ old('nachricht') }}</textarea>
+                    <label for="allgemein_nachricht">Deine Nachricht</label>
+                    <textarea id="allgemein_nachricht" name="nachricht" rows="4">{{ old('nachricht') }}</textarea>
                 </div>
             </fieldset>
 

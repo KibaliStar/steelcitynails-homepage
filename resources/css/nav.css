@@ -75,7 +75,7 @@ nav {
                     max-width: 14rem;
                     justify-content: center;
                     align-items: normal;
-                    color: var(--textLink);
+                    color: var(--color-text-link);
                     text-align: center;
                     text-decoration: none;
                     font-weight: 600;
@@ -85,11 +85,11 @@ nav {
                     transition: color 0.25s ease;
 
                     &:hover {
-                        color: var(--textHover);
+                        color: var(--color-text-hover);
                     }
 
                     &.active {
-                        color: var(--textActive);
+                        color: var(--color-text-active);
                     }
 
                     svg {
