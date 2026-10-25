@@ -6,6 +6,8 @@ use Spatie\Sitemap\Tags\Url;
 use App\Http\Controllers\KontaktController;
 
 Route::get('/', fn() => view('home'))->name('home');
+Route::get('/qr', fn() => view('home'))->name('qrhome');
+Route::get('/qrcode', fn() => view('qrcode'))->name('qrcode');
 Route::get('/tattoo', fn() => view('tattoo'))->name('tattoo');
 Route::get('/piercing', fn() => view('piercing'))->name('piercing');
 Route::get('/galerie', fn() => view('galerie'))->name('galerie');
@@ -34,12 +36,12 @@ Route::get('/sitemap.xml', function () {
 
     return Sitemap::create()
         ->add(Url::create('/')->setPriority(1.0)->setLastModificationDate($lastMod('home')))
+        ->add(Url::create('/qr')->setPriority(1.0)->setLastModificationDate($lastMod('home')))
         ->add(Url::create('/tattoo')->setPriority(0.9)->setLastModificationDate($lastMod('tattoo')))
         ->add(Url::create('/piercing')->setPriority(0.9)->setLastModificationDate($lastMod('piercing')))
         ->add(Url::create('/galerie')->setPriority(0.8)->setLastModificationDate($lastMod('galerie')))
         ->add(Url::create('/studio')->setPriority(0.7)->setLastModificationDate($lastMod('studio')))
         ->add(Url::create('/anfrage')->setPriority(0.8)->setLastModificationDate($lastMod('anfrage')))
-        ->add(Url::create('/termin')->setPriority(0.8)->setLastModificationDate($lastMod('termin')))
         ->add(Url::create('/kontakt')->setPriority(0.8)->setLastModificationDate($lastMod('kontakt')))
         ->add(Url::create('/anfahrt')->setPriority(0.6)->setLastModificationDate($lastMod('anfahrt')))
         ->add(Url::create('/agb')->setPriority(0.3)->setLastModificationDate($lastMod('agb')))
@@ -47,6 +49,7 @@ Route::get('/sitemap.xml', function () {
         ->add(Url::create('/datenschutz')->setPriority(0.3)->setLastModificationDate($lastMod('datenschutz')))
         ->add(Url::create('/faq')->setPriority(0.7)->setLastModificationDate($lastMod('faq')))
         ->add(Url::create('/sitemap')->setPriority(0.2)->setLastModificationDate($lastMod('sitemap')))
+        ->add(Url::create('/qrcode')->setPriority(1.0)->setLastModificationDate($lastMod('qrcode')))
         ->toResponse(request());
 });
 
