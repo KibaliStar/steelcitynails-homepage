@@ -35,7 +35,7 @@
         <h3>§1 Anbieter und Geltungsbereich</h3>
 
         <p>
-            (1) Anbieter ist die im <a href="impressum">Impressum</a> genannte natürliche oder juristische Person.
+            (1) Anbieter ist die im <a href="{{ route('impressum') }}">Impressum</a> genannte natürliche oder juristische Person.
         </p>
 
         <p>
@@ -233,7 +233,7 @@
         <h3>§17 Datenschutz</h3>
 
         <p>
-            Es gilt die <a href="datenschutz">Datenschutzerklärung</a>.
+            Es gilt die <a href="{{ route('datenschutz') }}">Datenschutzerklärung</a>.
         </p>
 
         <h3>§18 Widerrufsrecht</h3>
@@ -263,7 +263,7 @@
         <h3>§22 Kundendienst</h3>
 
         <p>
-            Kontakt über die im <a href="impressum">Impressum</a> angegebenen Wege.
+            Kontakt über die im <a href="{{ route('impressum') }}">Impressum</a> angegebenen Wege.
         </p>
 
         <h3>§23 Verbraucherstreitbeilegung</h3>

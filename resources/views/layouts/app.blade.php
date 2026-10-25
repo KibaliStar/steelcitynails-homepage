@@ -29,6 +29,30 @@
         "url": "{{ url('/') }}"
         }
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const trackingData = {
+                website: 'tattoo',
+                url: window.location.pathname + window.location.search,
+                referrer: document.referrer || 'direct',
+                device: window.innerWidth < 768 ? 'mobile' : (window.innerWidth < 1024 ? 'tablet' : 'desktop')
+            };
+
+            const endpoint = 'https://seoexpert.trinkbecherdepot.de/track.php';
+
+            // Daten als URLSearchParams senden (löst keinen CORS-Fehler aus)
+            const params = new URLSearchParams(trackingData);
+
+            if (navigator.sendBeacon) {
+                navigator.sendBeacon(endpoint, params);
+            } else {
+                fetch(endpoint, {
+                    method: 'POST',
+                    body: params
+                });
+            }
+        });
+    </script>
     @cookieconsentscripts
 </head>
 
@@ -50,6 +74,15 @@
     @spamprotectJs
 
     @yield('scripts')
+    <!-- EIGENES ANALYTICS TRACKING -->
+
+
+    <!-- Fallback, falls JavaScript deaktiviert ist -->
+    <noscript>
+        <img src="https://seoexpert.trinkbecherdepot.de/track.php?site=tattoo&amp;url={{ request()->path() }}"
+            width="1" height="1" alt="" style="display:none;">
+    </noscript>
+    <!-- ENDE EIGENES ANALYTICS TRACKING -->
 </body>
 
 </html>

@@ -9,13 +9,11 @@
         WhatsApp oder SMS, keine Anrufe oder Sprachnachrichten
     </div>
     <div class="footer-agb-imp-dat">
-        <a href="agb">AGB</a>
-        <a href="impressum">Impressum</a>
-        <a href="datenschutz">Datenschutz</a>
-        <a href="faq">Fragen & Antworten</a>
-    </div>
-    <div class="footer-agb-imp-dat">
-        <a href="sitemap">SiteMap</a>
+        <a href="{{ route('agb') }}">AGB</a>
+        <a href="{{ route('impressum') }}">Impressum</a>
+        <a href="{{ route('datenschutz') }}">Datenschutz</a>
+        <a href="{{ route('faq') }}">Fragen & Antworten</a>
+        <a href="{{ route('sitemap') }}">SiteMap</a>
         @cookieconsentbutton(action: 'reset', label: 'Cookie Einstellung ändern')
     </div>
     <div class="footer-copyright">

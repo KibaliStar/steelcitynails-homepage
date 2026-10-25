@@ -292,9 +292,9 @@
                 erst in einigen Monaten gestochen werden soll, ist für uns beide wenig sinnvoll.
             </p>
             <p>
-                Wenn Sie mehr wissen möchten, nutzen Sie gerne das <a href="anfrage">Kontaktformular</a> oder werfen Sie
+                Wenn Sie mehr wissen möchten, nutzen Sie gerne das <a href="{{ route('anfrage') }}">Kontaktformular</a> oder werfen Sie
                 einen Blick in den
-                Bereich <a href="faq">Fragen
+                Bereich <a href="{{ route('faq') }}">Fragen
                     &amp; Antworten</a>.
             </p>
         </div>

@@ -164,6 +164,9 @@ fieldset {
         padding: 0 10px;
         white-space: nowrap;
         overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80%;
+        display: block;
         font-weight: bold;
         font-size: var(--text-heading-2);
         color: var(--color-heading-2);

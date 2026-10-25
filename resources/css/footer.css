@@ -24,11 +24,15 @@ footer {
 
         .footer-agb-imp-dat {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-items: center;
-            gap: 1rem;
+            /* justify-content: space-evenly; */
+            align-items: flex-start;
+            gap: 0rem;
+
+            &>*:not(:last-child)::after {
+                content: "";
+            }
 
             a {
                 text-decoration: none;
@@ -36,7 +40,7 @@ footer {
                 font-size: 1rem;
                 font-weight: 600;
                 cursor: pointer;
-                padding: 0 0.5rem;
+                padding: 0 0.5rem 0 0;
                 height: 1.5rem;
                 line-height: 1.5rem;
 
@@ -59,7 +63,7 @@ footer {
                 font-size: 1rem;
                 font-weight: 600;
                 cursor: pointer;
-                padding: 0 0.5rem;
+                padding: 0 0.5rem 0 0;
                 height: 1.5rem;
                 line-height: 1.5rem;
 
@@ -134,12 +138,15 @@ footer {
 
             .footer-kontakt {}
 
-            .footer-agb-imp-dat-mobil {
-                display: none;
-            }
-
             .footer-agb-imp-dat {
+                flex-direction: row;
                 display: flex;
+                align-items: center;
+                
+                &>*:not(:last-child)::after {
+                    content: "|";
+                    margin-left: 0.5rem;
+                }
             }
 
             .footer-copyright {}
