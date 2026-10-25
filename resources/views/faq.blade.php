@@ -107,37 +107,4 @@
         </p>
     </div>
 
-    <div class="question" id="faq10">
-        <span class="text-2xl text-text-studio-slogan">Warum gelten Ihre Angebote nur 14 Tage?</span>
-        <p>Leider zeigt die aktuelle Situation, dass nichts wirklich beständig ist.<br>
-            Preise ändern sich, Materialkosten steigen und Lieferengpässe erschweren die Kalkulation.<br>
-            Wenn ich Ihnen heute einen Preis nenne, spiegelt das meine aktuellen Kosten wider. 
-            Sollten Sie Ihren Termin erst in einigen Monaten wahrnehmen wollen, kann (muss aber nicht) der Preis bis dahin leicht variieren.
-        </p>
-    </div>
-
-    <div class="question" id="faq11">
-        <span class="text-2xl text-text-studio-slogan">Warum sind Ihre Behandlungen so fair im Preis?</span>
-        <p>
-            Auch ich habe Kosten wie jedes andere Studio, dazu gehören Miete, Steuern, Steuerberater, Strom, Heizung, Betriebskosten, Reinigungsmaterial und natürlich die hochwertigen Materialien für Nägel und Make-up.<br>
-            Was meine Preise fair macht: Ich habe kein überteuertes Studio in perfekter Lage, man muss mich ein bisschen suchen.<br>
-            Zudem gebe ich fast kein Geld für Werbung aus - alles ist selber gemacht, von der Schaufensterbeklebung bis zur Webseite.<br>
-            Die meisten Kunden kommen durch Empfehlung, das hält meinen Terminkalender gut gefüllt.<br>
-            Was ich sparen kann, zahle ich an meine Kunden weiter - und das kommt gut an.
-        </p>
-    </div>
-
-    <div class="question" id="faq12">
-        <span class="text-2xl text-text-studio-slogan">Warum Anfragen nur schriftlich?</span>
-        <p>
-            Ich habe kein Callcenter und keine Person, die ständig am Telefon sitzt.<br>
-            Wenn ich Nägel designe oder Make-up auftrage, brauche ich Ruhe und volle Konzentration.<br>
-            Meine Arbeit soll perfekt werden.<br>
-            Daher habe ich mein Telefon immer lautlos und beantworte Anfragen, sobald ich Zeit habe.<br>
-            Und mal im Ernst: Möchten Sie, dass ich während Ihrer Behandlung alle 10 Minuten ans Telefon gehe?<br>
-            Sicherlich nicht - ich möchte mich voll auf Ihre Nägel oder Ihr Make-up konzentrieren können.<br>
-            Ein weiterer Vorteil: Oft erstreckt sich die Entscheidung meiner Kunden über Wochen und Monate. 
-            Da ist es von großem Vorteil, wenn ich einen schriftlichen Gesprächsverlauf habe, in dem ich nachvollziehen kann, worüber wir gesprochen haben.
-        </p>
-    </div>
 @endsection
