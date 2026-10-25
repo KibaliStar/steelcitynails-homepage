@@ -2,6 +2,9 @@
 
 @section('title', 'Startseite')
 
+@section('description',
+    'Steelcitynails dein Nagelstudio in Eisenhüttenstadt, willkommen.')
+
 @section('styles')
     <style>
         .absatz {
@@ -214,7 +217,7 @@
 @endsection
 
 @section('content')
-    <h1>Willkommen bei Bumblebee Tattoo Eisenhüttenstadt</h1>
+    <h1>Willkommen bei Steelcitynails Eisenhüttenstadt</h1>
 
     <div class="absatz">
         <h2>Dein Studio in Eisenhüttenstadt für Tattoos, Cover-Up und Piercings</h2>

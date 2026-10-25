@@ -2,7 +2,7 @@
 
 @section('title', 'AGB')
 
-@section('description', 'Tattoo und Piercing in Eisenhüttenstadt, hier findest du unsere AGB.')
+@section('description', 'Steelcitynails dein Nagelstudio in Eisenhüttenstadt, hier findest du unsere AGB.')
 
 @section('styles')
     <style>
@@ -28,8 +28,7 @@
 
         <p>
             Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung dieser Website sowie für sämtliche darüber
-            angebotenen oder vermittelten Dienstleistungen in den Bereichen Tattoo, Piercing, Nageldesign, Make-up,
-            Bodypainting, Facepainting und vergleichbaren körpernahen sowie kreativen Dienstleistungen.
+            angebotenen oder vermittelten Dienstleistungen in den Bereichen Nageldesign, Maniküre, Pediküre und kosmetische Behandlungen.
         </p>
 
         <h3>§1 Anbieter und Geltungsbereich</h3>
@@ -151,30 +150,7 @@
             sicherheitsrelevante Gründe bestehen oder der Kunde unter Alkohol- oder Drogeneinfluss steht.
         </p>
 
-        <h3>§8 Tattoo- und Piercingleistungen</h3>
-
-        <p>
-            (1) Tattoo- und Piercingleistungen erfolgen ausschließlich nach Aufklärung und Einwilligung.
-        </p>
-
-        <p>
-            (2) Der Kunde wird über Risiken, Pflege und mögliche Komplikationen informiert.
-        </p>
-
-        <p>
-            (3) Eine gesonderte schriftliche Einwilligung kann erforderlich sein.
-        </p>
-
-        <p>
-            (4) Nachstechen ist nur dann im Preis enthalten, wenn dies ausdrücklich vereinbart wurde. In der Regel ist ein
-            kostenfreies Nachstechen nur innerhalb von 3 Monaten und nur bei fachgerecht durchgeführter Nachsorge
-            vorgesehen.
-        </p>
-
-        <p>
-            (5) Kein Anspruch auf kostenfreies Nachstechen besteht bei mangelnder Pflege, Eigenverschulden oder äußeren
-            Einflüssen.
-        </p>
+        <h3>§8 (gestrichen)</h3>
 
         <h3>§9 Minderjährige</h3>
 
@@ -199,7 +175,7 @@
         <h3>§12 Kreative und künstlerische Leistungen</h3>
 
         <p>
-            Künstlerische Abweichungen stellen keinen Mangel dar, sofern die Leistung fachgerecht erbracht wurde.
+            Geringfügige Abweichungen von der Vorlage sind möglich, sofern die Leistung fachgerecht erbracht wurde
         </p>
 
         <h3>§13 Bild- und Nutzungsrechte</h3>

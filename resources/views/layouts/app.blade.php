@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>@yield('title', 'Tattoo Studio') - Bumblebee Tattoo Eisenhüttenstadt</title>
-    <meta name="description" content="@yield('description', 'Bumblebee Tattoo in Eisenhüttenstadt - professionelle Tattoos, individuelle Beratung und faire Preise.')">
+    <title>@yield('title', 'Nageldesign Studio') - Steelcitynails Eisenhüttenstadt</title>
+    <meta name="description" content="@yield('description', 'Steelcitynails dein Nagelstudio in Eisenhüttenstadt - professionelles Nageldesign und faire Preise.')">
     <link rel="canonical" href="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('title', 'Tattoo Studio') - Bumblebee Tattoo Eisenhüttenstadt">
-    <meta property="og:description" content="@yield('description', 'Bumblebee Tattoo in Eisenhüttenstadt - professionelle Tattoos, individuelle Beratung und faire Preise.')">
+    <meta property="og:title" content="@yield('title', 'Nageldesign Studio') - Steelcitynails Eisenhüttenstadt">
+    <meta property="og:description" content="@yield('description', 'Steelcitynails dein Nagelstudio in Eisenhüttenstadt - professionelles Nageldesign und faire Preise.')">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
@@ -19,8 +19,8 @@
     <script type="application/ld+json">
         {
         "@@context": "https://schema.org",
-        "@@type": ["TattooParlor", "LocalBusiness"],
-        "name": "Bumblebee Tattoo Eisenhüttenstadt",
+        "@@type": ["NailSalon", "LocalBusiness"],
+        "name": "Steelcitynails Eisenhüttenstadt",
         "address": {
             "@@type": "PostalAddress",
             "addressLocality": "Eisenhüttenstadt",
@@ -32,7 +32,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const trackingData = {
-                website: 'tattoo',
+                website: 'nageldesign',
                 url: window.location.pathname + window.location.search,
                 referrer: document.referrer || 'direct',
                 device: window.innerWidth < 768 ? 'mobile' : (window.innerWidth < 1024 ? 'tablet' : 'desktop')

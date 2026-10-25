@@ -3,7 +3,7 @@
 @section('title', 'Sitemap')
 
 @section('description',
-    'Tattoo und Piercing in Eisenhüttenstadt, eine Sitemap zur schnellen Orientierung.')
+    'Steelcitynails dein Nagelstudio in Eisenhüttenstadt, eine Sitemap zur schnellen Orientierung.')
 
 @section('styles')
     <style>
@@ -33,8 +33,8 @@
     <h2>Hauptseiten</h2>
     <ul>
         <li><a href="{{ route('home') }}">Startseite</a></li>
-        <li><a href="{{ route('tattoo') }}">Tattoo</a></li>
-        <li><a href="{{ route('piercing') }}">Piercing</a></li>
+        /* <li><a href="{{ route('tattoo') }}">Tattoo</a></li>
+        <li><a href="{{ route('piercing') }}">Piercing</a></li> */
         <li><a href="{{ route('galerie') }}">Galerie</a></li>
         <li><a href="{{ route('studio') }}">Studio</a></li>
         <li><a href="{{ route('anfrage') }}">Anfrage</a></li>
@@ -48,5 +48,6 @@
         <li><a href="{{ route('impressum') }}">Impressum</a></li>
         <li><a href="{{ route('datenschutz') }}">Datenschutz</a></li>
         <li><a href="{{ route('agb') }}">AGB</a></li>
+        <li><a href="{{ route('qrcode') }}">QR Code</a></li>
     </ul>
 @endsection

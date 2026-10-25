@@ -2,7 +2,7 @@
 
 @section('title', 'Datenschutz')
 
-@section('description', 'Tattoo und Piercing in Eisenhüttenstadt, hier findest du Angaben zum Datenschutz.')
+@section('description', 'Steelcitynails dein Nagelstudio in Eisenhüttenstadt, hier findest du Angaben zum Datenschutz.')
 
 @section('styles')
     <style>
@@ -74,7 +74,7 @@
         <h3>§6 Terminbuchung und Dienstleistungen</h3>
 
         <p>
-            Im Rahmen von Terminvereinbarungen (Tattoo, Piercing, Beauty etc.) werden personenbezogene Daten verarbeitet.
+            Im Rahmen von Terminvereinbarungen (Nageldesign, Visagistik, Beauty etc.) werden personenbezogene Daten verarbeitet.
         </p>
 
         <p>

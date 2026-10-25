@@ -3,7 +3,7 @@
 @section('title', 'Anfrage / Kontaktformular')
 
 @section('description',
-    'Tattoo und Piercing in Eisenhüttenstadt, du suchst Kontakt zu uns? 
+    'Steelcitynails dein Nagelstudio in Eisenhüttenstadt, du suchst Kontakt zu uns? 
     Hier findest du unser Kontaktformular, Teile deine Wünsche und Vorstellungen mit uns.')
 
 @section('styles')

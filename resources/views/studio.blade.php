@@ -2,6 +2,9 @@
 
 @section('title', 'Studio')
 
+@section('description',
+    'Steelcitynails dein Nagelstudio in Eisenhüttenstadt, so sieht es in unserem Studio aus.')
+
 @section('styles')
     <style>
         a {

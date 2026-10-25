@@ -3,7 +3,7 @@
 @section('title', 'Galerie')
 
 @section('description',
-    'Tattoo und Piercing in Eisenhüttenstadt, hier findest du eine Galerie mit ausgewählten Arbeiten')
+    'Steelcitynails dein Nagelstudio in Eisenhüttenstadt, hier findest du eine Galerie mit ausgewählten Arbeiten')
 
 @section('styles')
     <style>
@@ -65,7 +65,7 @@
         }
     @endphp
 
-    <div class="grid" id="galeriegrid" data-hash="tattoo">
+    <div class="grid" id="galeriegrid" data-hash="nageldesign">
         {{-- <div class="grid-item">
             <div class="card-content-image">
                 <img src="galerieimages/frog.png" alt="Frosch Bild" />

@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "hash": ["tattoo"],
+        "hash": ["nageldesign"],
         "src": "galerieimages/bild001.webp",
-        "alt": "Tattoo Bild 1"
+        "alt": "Nageldesign Bild 1"
     },
     {
         "id": 2,
-        "hash": ["tattoo", "piercing"],
+        "hash": ["nageldesign", "makeup"],
         "src": "galerieimages/bild002.webp",
-        "alt": "Tattoo Bild 2"
+        "alt": "Nageldesign Bild 2"
     }
 ]
