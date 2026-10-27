@@ -5,17 +5,62 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem 2rem 1rem;
+    margin: 1rem auto;
+    width: var(--contentWidth);
 
     .nav-links {
+        /* Flexbox sorgt dafür, dass alles in EINER Zeile ist */
         display: none;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        min-width: 100px;
-        height: 64px;
-        border: 3px solid red;
-        /* TODO: Entfernen, wenn fertig */
+        gap: 2rem;
+        /* Abstand zwischen den Links */
+
+        /* Serifenlose Schrift (System-Fonts für schnelle Ladezeit) */
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 1.0rem;
+        /* Angenehme Größe */
+        font-weight: 400;
+        /* Etwas kräftiger für bessere Lesbarkeit */
+
+        a {
+            color: var(--color-text-primaer);
+            text-decoration: none;
+            text-transform: uppercase;
+            /* Optional: Macht es edler (Großbuchstaben) */
+            letter-spacing: 1px;
+            /* Optional: Leichter Buchstabenabstand für Premium-Look */
+            position: relative;
+            /* Wichtig für den Unterstrich-Effekt */
+            padding: 0.125rem 0;
+            transition: color 0.3s ease;
+
+            /* Der elegante Unterstrich-Effekt */
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                /* Startet unsichtbar */
+                height: 2px;
+                background-color: var(--color-text-link);
+                transition: width 0.75s ease;
+                /* Wächst von links nach rechts */
+            }
+
+            /* Hover-Zustand */
+            &:hover {
+                color: var(--color-text-link);
+                /* Farbe wechselt zu Soft Chestnut */
+
+                &::after {
+                    width: 100%;
+                    /* Unterstrich wächst auf volle Breite */
+                }
+            }
+        }
     }
 
     .nav-buchen-top {
@@ -115,9 +160,7 @@ nav {
         align-items: center;
         cursor: pointer;
         z-index: 10000;
-        color: var(--color-icon-logo);
-        width: 100px;
-        height: 64px;
+        margin-right: 4rem;
 
         /* Das SVG Icon stylen */
         .icon-navmenu {
@@ -125,6 +168,7 @@ nav {
             height: 30px;
             transition: color 0.3s ease;
             color: var(--color-icon-logo);
+            transition: color 0.3s ease;
 
             &:hover {
                 color: var(--color-icon-logo-hover);

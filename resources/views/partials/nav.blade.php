@@ -1,15 +1,14 @@
 {{-- nav.blade.php --}}
-
-<a href="{{ route('home') }}" class="site-logo">
+<a href="{{ route('home') }}" class="site-logo" id="top">
     <x-logo />
 </a>
-<div class="nav-links">
-    Angebot
-    Über Mich
-    Nageldesign
-    Visagistik
-    Kontakt
-</div>
+<nav class="nav-links">
+    <a href="#home-angebot">Angebot</a>
+    <a href="#home-ueber-mich">Über Mich</a>
+    <a href="#home-nageldesign">Nageldesign</a>
+    <a href="#home-visagistik">Visagistik</a>
+    <a href="#home-kontakt">Kontakt</a>
+</nav>
 <div class="nav-buchen-top">
     buchen-top
 </div>
@@ -47,11 +46,11 @@
 
         <!-- Die Links -->
         <div class="mobile-menu-links">
-            <a href="{{ route('home') }}">Startseite</a>
-            <a href="{{ route('galerie') }}">Galerie</a>
-            <a href="{{ route('studio') }}">Studio</a>
-            <a href="{{ route('anfrage') }}">Termin buchen</a>
-            <a href="{{ route('kontakt') }}">Kontakt</a>
+            <a href="{{ route('home') }}#home-angebot">Angebot</a>
+            <a href="{{ route('home') }}#home-ueber-mich">Über Mich</a>
+            <a href="{{ route('home') }}#home-nageldesign">Nageldesign</a>
+            <a href="{{ route('home') }}#home-visagistik">Visagistik</a>
+            <a href="{{ route('home') }}#home-kontakt">Kontakt</a>
         </div>
     </div>
 </div>
