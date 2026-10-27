@@ -30,28 +30,35 @@
     --text-heading-4: 1.1rem;
 
     /* Farben */
-    --color-body-bg: #111111;
-    --color-text-primaer: #848484;
-    /* #6b6b6b; */
-    --color-text-primaerhell: #999999;
-    --color-text-studio-name: #c9a53b;
-    --color-text-studio-slogan: #7e5c07;
-    /* --color-text-link: #795c14;
-    --color-text-hover: #947a2c;     */
-    --color-text-link: #B87D3E;
-    --color-text-hover: #D69A58;
-    --color-text-faq-link: #C58C4D;
-    --color-text-faq-hover: #D69A58;
-    --color-text-active: #dbbe65;
-    --color-heading-1: #c98b3b;
-    --color-heading-2: #d69e55;
-    --color-heading-3: #b67e35;
-    --color-heading-4: #b67e35;
-    --color-border: #5a5a5a;
-    --color-faqfieldset: #2A2A2A;
-    --color-tab-hell: #4a4a4a;
-    --color-tab-dunkel: #3a3a3a;
-    --color-logo-rot: #eb0000;
+    --color-body-bg: #F5EDE4;
+    /* Soft Alabaster (Haupt-Hintergrund) */
+    --color-body-bg2: #E5C4AD;
+    /* Warm Sand (Verlauf & Footer) */
+    --color-text-primaer: #2A2A21;
+    /* Espresso Dark (Standard-Text & Hover) */
+    --color-text-link: #7D5C4C;
+    /* Soft Chestnut (Klickbare Links & Textlinks) */
+    --color-text-hover: #2A2A21;
+    /* Espresso Dark (Link-Hover Zustand) */
+    --color-border: #D1BCB0;
+    /* Muted Sandstone (Dezente Rahmen & Trennlinien) */
+    --color-icon-logo: #7A8475;
+    /* salbeigrün */
+    --color-icon-logo-hover: #C08B82;
+    /* Dusty Rose */
+    --color-button1: #A36A53;
+    /* Terrakotta (Primärer Action-Button) */
+    --color-button2: #7A8475;
+    /* Gedecktes Salbeigrün (Sekundärer Button) */
+    --color-white-pure: #FFFFFF;
+    /* Reines Weiß (Für kontrastreichen Button-Text) */
+    --color-card-bg: rgba(255, 255, 255, 0.4);
+    /* Transluzentes Weiß (Für edle Produkt- & Infokarten) */
+    --color-header-bg: rgba(245, 237, 228, 0.8);
+    /* Milchglas-Effekt (Passend zum Alabaster-Hintergrund) */
+    --color-shadow: rgba(92, 77, 70, 0.05);
+    /* Softe Schattenfarbe (Basierend auf Deep Taupe für weiche Tiefe) */
+
 }
 
 :root {
@@ -64,7 +71,8 @@
 }
 
 body {
-    background-color: var(--color-body-bg);
+    background: linear-gradient(to right, var(--color-body-bg), var(--color-body-bg2));
+    background-attachment: fixed;
     height: 100vh;
     color: var(--color-text-primaer);
     font-family: var(--font-sans);
@@ -74,27 +82,6 @@ body {
     padding: 1rem;
     position: relative;
     z-index: 1;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* background-image: url("/images/bumblebee_tattoo_logo.webp"); */
-        background-image: url("../images/bumblebee_tattoo_logo.webp");
-        background-repeat: no-repeat;
-        background-position: center;
-        /* background-size: cover; */
-        background-size: contain;
-        background-attachment: fixed;
-        /* ← Das Bild scrollt NICHT mit */
-        opacity: 0.08;
-        pointer-events: none;
-        z-index: -1;
-        filter: grayscale(100%) contrast(120%);
-    }
 }
 
 main {
@@ -151,25 +138,29 @@ h4 {
     font-size: var(--text-heading-4);
 }
 
-fieldset {
-    display: block;
-    border: 3px solid var(--color-border);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 3rem 0.2rem 3rem 0;
-    font-size: var(--text-heading-1);
-    width: var(--contentWidth);
+a {
+    color: var(--color-text-link);
+    text-decoration: none;
 
-    legend {
-        padding: 0 10px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 80%;
+    &:hover {
+        color: var(--color-text-hover);
+    }
+}
+
+.site-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 200px;
+    color: var(--color-icon-logo);
+    .logosvg {
+        height: 100%;
+        width: auto;
         display: block;
-        font-weight: bold;
-        font-size: var(--text-heading-2);
-        color: var(--color-heading-2);
+    }
+    &:hover {
+        color: var(--color-icon-logo-hover);
     }
 }
 

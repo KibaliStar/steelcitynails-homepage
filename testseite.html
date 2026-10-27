@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steelcitynails Eisenhüttenstadt - Demo</title>
+    <style>
+        /* Deine exakte Farbpalette & UI-Ergänzungen */
+        :root {
+            --color-body-bg: #F5EDE4;       /* Soft Alabaster */
+            --color-body-bg2: #E5C4AD;      /* Warm Sand */
+            --color-text-primaer: #2A2A21;   /* Espresso Dark */
+            --color-text-link: #7D5C4C;      /* Soft Chestnut */
+            --color-text-hover: #2A2A21;     /* Espresso Dark */
+            --color-border: #D1BCB0;         /* Muted Sandstone */
+            --color-icon-logo: #5C4D46;      /* Deep Taupe */
+            --color-button1: #A36A53;        /* Terrakotta */
+            --color-button2: #7A8475;        /* Gedecktes Salbeigrün */
+            --color-white-pure: #FFFFFF;
+            --color-card-bg: rgba(255, 255, 255, 0.5);
+            --color-header-bg: rgba(245, 237, 228, 0.85);
+            --color-shadow: rgba(92, 77, 70, 0.08);
+        }
+
+        /* Globale Layout-Regeln */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--color-body-bg);
+            color: var(--color-text-primaer);
+            line-height: 1.6;
+        }
+        section { padding: 90px 8% 60px 8%; border-bottom: 1px solid var(--color-border); }
+        h2 { font-size: 2.2rem; font-weight: 400; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; color: var(--color-icon-logo); }
+
+        /* Navigation (Fixiert mit edlem Unschärfe-Effekt) */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 8%; border-bottom: 1px solid var(--color-border);
+            background-color: var(--color-header-bg); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-size: 1.4rem; font-weight: 700; letter-spacing: 2px; color: var(--color-icon-logo); text-decoration: none; }
+        nav { display: flex; align-items: center; gap: 20px; }
+        nav a { color: var(--color-text-link); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--color-text-hover); text-decoration: underline; }
+
+        /* Buttons */
+        .btn { display: inline-block; padding: 12px 28px; border: none; border-radius: 4px; font-size: 0.95rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.3s; text-align: center; }
+        .btn:hover { transform: translateY(-2px); opacity: 0.95; }
+        .btn-booking { background-color: var(--color-button1); color: var(--color-white-pure); }
+        .btn-secondary { background-color: var(--color-button2); color: var(--color-white-pure); }
+
+        /* Hero Sektion */
+        .hero { display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, var(--color-body-bg) 0%, var(--color-body-bg2) 100%); min-height: 75vh; gap: 40px; }
+        .hero-content { max-width: 550px; }
+        .hero-content h1 { font-size: 2.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 20px; color: var(--color-text-primaer); }
+        .hero-content p { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; }
+        .hero-image-placeholder { width: 45%; min-height: 380px; background-color: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-style: italic; color: var(--color-icon-logo); box-shadow: 0 15px 30px var(--color-shadow); }
+
+        /* Komponenten-Styles für spätere Sektionen */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background-color: var(--color-card-bg); padding: 30px; border: 1px solid var(--color-border); border-radius: 6px; box-shadow: 0 5px 15px var(--color-shadow); }
+        .price-list { list-style: none; margin-top: 15px; }
+        .price-list li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed var(--color-border); }
+        .price-list li span:last-child { font-weight: bold; }
+        .table-studio { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .table-studio td { padding: 12px; border-bottom: 1px solid var(--color-border); }
+        .table-studio td:first-child { font-weight: bold; color: var(--color-icon-logo); width: 40%; }
+        .gallery-preview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 25px; }
+        .gallery-box { background: rgba(255,255,255,0.3); border: 1px dashed var(--color-border); height: 120px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; border-radius: 4px; color: var(--color-icon-logo); }
+        footer { background-color: var(--color-body-bg2); padding: 50px 8% 30px 8%; text-align: center; font-size: 0.9rem; color: var(--color-icon-logo); }
+        footer a { color: var(--color-text-link); text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: var(--color-text-hover); text-decoration: underline; }
+        .footer-links { margin-bottom: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+
+        @media (max-width: 900px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            nav { flex-wrap: wrap; justify-content: center; }
+            .hero { flex-direction: column; text-align: center; padding-top: 40px; }
+            .hero-image-placeholder { width: 100%; min-height: 250px; }
+            .gallery-preview { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <a href="#" class="logo">STEELCITYNAILS</a>
+        <nav>
+            <a href="#angebot">Angebot</a>
+            <a href="#ueber-mich">Über Mich</a>
+            <a href="#nageldesign">Nageldesign</a>
+            <a href="#visagistik">Visagistik</a>
+            <a href="#kontakt">Kontakt</a>
+            <!-- Simulierter Laravel-Route Link zum Buchungs-Iframe -->
+            <a href="#" onclick="alert('Hier erfolgt das Routing zur eigenständigen SuperSass-Iframe-Seite im Laravel-Projekt.'); return false;" class="btn btn-booking" style="padding: 8px 18px; margin-left: 10px;">Jetzt Buchen</a>
+        </nav>
+    </header>
+
+    <!-- Hero Sektion -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>ENJOY THE BEST NAIL CARE IN EISENHÜTTENSTADT</h1>
+            <p>Make your nails perfect right now! Erlebe professionelle Nagelpflege und exzellente Visagistik in einer entspannten Wohlfühlatmosphäre.</p>
+            <a href="#" onclick="alert('Routet zum Buchungs-Iframe'); return false;" class="btn btn-booking">Termin vereinbaren</a>
+        </div>
+        <div class="hero-image-placeholder">
+            [ Kampagnenbild / Studio-Visualisierung ]
+        </div>
+    </section>
+    <!-- Sektion: Angebot -->
+    <section id="angebot" style="background-color: var(--color-body-bg);">
+        <h2>Angebot</h2>
+        <p style="margin-bottom: 30px; font-size: 1.1rem;">Was bieten wir an? Entdecke unser exklusives Verwöhnprogramm für deine Hände und dein Gesicht.</p>
+        <div class="grid-2">
+            <div class="card" style="border-left: 4px solid var(--color-button1);">
+                <h3 style="margin-bottom: 10px; font-weight: 500;">Nageldesign</h3>
+                <p>Professionelle Modellage, Shellac und präzise Maniküre für langanhaltend schöne Nägel.</p>
+                <p style="margin-top: 15px; font-weight: bold; color: var(--color-button1); font-size: 1.2rem;">ab 20,00 €</p>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--color-button2);">
+                <h3 style="margin-bottom: 10px; font-weight: 500;">Visagistik</h3>
+                <p>Individuelles Make-up für Hochzeiten, Events oder Fotoshootings – exakt auf dich abgestimmt.</p>
+                <p style="margin-top: 15px; font-weight: bold; color: var(--color-button2); font-size: 1.2rem;">ab 30,00 €</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sektion: Über Mich -->
+    <section id="ueber-mich" style="background-color: var(--color-body-bg2); border-bottom: 1px solid var(--color-border);">
+        <h2>Über Mich</h2>
+        <div class="grid-2">
+            <div>
+                <h3 style="margin-bottom: 15px; font-weight: 500;">Meine Geschichte</h3>
+                <p style="margin-bottom: 15px;">Willkommen bei Steelcitynails. Ich glaube daran, dass Nägel deine Visitenkarte sind. Mit Leidenschaft und Präzision kreiere ich Looks, die deine Persönlichkeit unterstreichen.</p>
+                <p style="margin-bottom: 25px;">Erfahre mehr über meine Techniken und lerne mich persönlich kennen. Bei Fragen stehe ich dir jederzeit telefonisch zur Verfügung.</p>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="tel:+49123456789" class="btn btn-secondary">Tel: Anrufen</a>
+                    <a href="#faq" class="btn" style="background: transparent; border: 1px solid var(--color-text-primaer); color: var(--color-text-primaer);">Zur FAQ-Seite (unten)</a>
+                </div>
+            </div>
+            <div class="card" style="background-color: rgba(255,255,255,0.7);">
+                <h3 style="margin-bottom: 15px; font-weight: 500; color: var(--color-icon-logo);">Qualitätsversprechen</h3>
+                <table class="table-studio">
+                    <tr>
+                        <td>Hygienekonzept</td>
+                        <td>100% Sterile Tools für jede Kundin (Ultraschall & Desinfektion)</td>
+                    </tr>
+                    <tr>
+                        <td>Expertise</td>
+                        <td>Zertifikate im Bereich High-End Nageldesign & Visagistik</td>
+                    </tr>
+                    <tr>
+                        <td>Auswahl</td>
+                        <td>Über 100+ Colors an Lager – von zeitlos edel bis hin zu modernsten Trends</td>
+                    </tr>
+                    <tr>
+                        <td>Qualität</td>
+                        <td>Einsatz von namhaften Premium-Brands für maximale Haltbarkeit</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sektion: Nageldesign -->
+    <section id="nageldesign" style="background-color: var(--color-body-bg);">
+        <h2>Nageldesign</h2>
+        <div class="grid-2">
+            <div>
+                <h3 style="margin-bottom: 15px; font-weight: 500;">Auszug der Preisliste</h3>
+                <ul class="price-list">
+                    <li><span>Klassische Maniküre (inkl. Pflege)</span><span>20,00 €</span></li>
+                    <li><span>Naturnagelverstärkung</span><span>35,00 €</span></li>
+                    <li><span>Neuanlage (Gel / Verlängerung)</span><span>55,00 €</span></li>
+                    <li><span>Auffüllen (Refill)</span><span>40,00 €</span></li>
+                    <li><span>Shellac / Gel-Lack</span><span>30,00 €</span></li>
+                    <li><span>Nail Art (pro Nagel ab)</span><span>1,50 €</span></li>
+                </ul>
+                <a href="#kontakt" style="display: inline-block; margin-top: 25px; color: var(--color-text-link); font-weight: 600; text-decoration: none; transition: color 0.3s;">&rarr; Zum Lookbook in der Galerie</a>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 20px; font-weight: 500;">Das sagen unsere Kundinnen</h3>
+                <div class="card" style="margin-bottom: 15px; background: #fff;">
+                    <p style="font-style: italic; font-size: 0.95rem;">"Die besten Nägel in ganz Eisenhüttenstadt! Die Hygiene ist top und die Auswahl an Farben überwältigend. Hält problemlos 4 Wochen!"</p>
+                    <p style="margin-top: 10px; font-size: 0.85rem; font-weight: bold; text-align: right; color: var(--color-text-link);">- Jessica M.</p>
+                </div>
+                <div class="card" style="background: #fff;">
+                    <p style="font-style: italic; font-size: 0.95rem;">"Super präzise Arbeit und extrem freundlich. Die sterilen Werkzeuge geben mir ein absolut sicheres Gefühl."</p>
+                    <p style="margin-top: 10px; font-size: 0.85rem; font-weight: bold; text-align: right; color: var(--color-text-link);">- Sarah K.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sektion: Visagistik -->
+    <section id="visagistik" style="background-color: var(--color-body-bg2);">
+        <h2>Visagistik</h2>
+        <div class="grid-2">
+            <div>
+                <h3 style="margin-bottom: 15px; font-weight: 500;">Professionelles Make-up</h3>
+                <p style="margin-bottom: 20px;">Egal ob für ein besonderes Event, ein Fotoshooting oder deinen großen Tag: Ich kreiere ein professionelles Make-up, das deine natürliche Schönheit hervorhebt und den ganzen Tag (und die ganze Nacht) perfekt hält.</p>
+                <a href="#kontakt" style="display: inline-block; color: var(--color-text-link); font-weight: 600; text-decoration: none;">&rarr; Vorher-/Nachher-Bilder in der Galerie</a>
+            </div>
+            <div class="card" style="background-color: rgba(255, 255, 255, 0.7);">
+                <h3 style="margin-bottom: 15px; font-weight: 500;">Auszug der Preisliste</h3>
+                <ul class="price-list">
+                    <li><span>Tages-Make-up (dezent & frisch)</span><span>30,00 €</span></li>
+                    <li><span>Abend- / Event-Make-up (ausdrucksstark)</span><span>45,00 €</span></li>
+                    <li><span>Braut-Make-up (inkl. Probetermin)</span><span>120,00 €</span></li>
+                    <li><span>Wimpern kleben (Zusatzleistung)</span><span>10,00 €</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sektion: Kontakt & Galerieauszug -->
+    <section id="kontakt" style="background-color: var(--color-body-bg);">
+        <h2>Kontakt & Studio</h2>
+        <div class="grid-2">
+            <div>
+                <h3 style="margin-bottom: 15px; font-weight: 500;">Anfahrt & Studio-Infos</h3>
+                <p style="margin-bottom: 20px;">Unser Studio liegt zentral in Eisenhüttenstadt. Kostenfreie Parkplätze findest du direkt vor der Tür. Bitte beachte: Um maximale Entspannung zu garantieren, vergeben wir Termine <strong>nur nach vorheriger Vereinbarung</strong>.</p>
+                
+                <table class="table-studio" style="background-color: var(--color-card-bg); border-radius: 6px;">
+                    <tr>
+                        <td>Adresse</td>
+                        <td>Beispielstraße 42<br>15890 Eisenhüttenstadt</td>
+                    </tr>
+                    <tr>
+                        <td>Telefon</td>
+                        <td><a href="tel:+49123456789" style="color: var(--color-text-link);">+49 (0) 123 456789</a></td>
+                    </tr>
+                    <tr>
+                        <td>E-Mail</td>
+                        <td><a href="mailto:info@steelcitynails.de" style="color: var(--color-text-link);">info@steelcitynails.de</a></td>
+                    </tr>
+                    <tr>
+                        <td>Social Media</td>
+                        <td>
+                            <a href="#" style="color: var(--color-text-link); margin-right: 10px;">Instagram</a>
+                            <a href="#" style="color: var(--color-text-link);">Facebook</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <h3 style="margin-bottom: 15px; font-weight: 500;">Galerieauszug (Social Feed)</h3>
+                <p style="font-size: 0.95rem; opacity: 0.8;">Aktuelle Eindrücke und frisch kreierte Nageldesigns direkt aus unserem Studio:</p>
+                <div class="gallery-preview">
+                    <div class="gallery-box">Nude Elegance</div>
+                    <div class="gallery-box">Babyboomer</div>
+                    <div class="gallery-box">Glitter Art</div>
+                    <div class="gallery-box">Bridal Glam</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio-Hilfe / FAQ Sektion (Verlinkt aus "Über mich" und Footer) -->
+    <section id="faq" style="background-color: var(--color-body-bg2); border-bottom: none; padding-top: 60px; padding-bottom: 60px;">
+        <h3 style="font-size: 1.6rem; font-weight: 400; margin-bottom: 25px; text-transform: uppercase; color: var(--color-icon-logo);">Häufige Fragen (FAQ)</h3>
+        <div class="grid-2">
+            <div class="card" style="background: #fff;">
+                <h4 style="margin-bottom: 8px; font-weight: 600;">Wie kann ich bezahlen?</h4>
+                <p style="font-size: 0.95rem; opacity: 0.85;">Du kannst bei uns bequem bar, mit EC-Karte oder kontaktlos per Smartphone (Apple Pay / Google Pay) direkt nach deiner Behandlung bezahlen.</p>
+            </div>
+            <div class="card" style="background: #fff;">
+                <h4 style="margin-bottom: 8px; font-weight: 600;">Was passiert, wenn ich meinen Termin absagen muss?</h4>
+                <p style="font-size: 0.95rem; opacity: 0.85;">Absagen sind bis zu 24 Stunden vor dem Termin kostenfrei. Bei kurzfristigeren Absagen oder Nichterscheinen müssen wir leider eine Ausfallgebühr von 50 % berechnen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">AGB & Stornobedingungen</a> | 
+            <a href="#">Impressum</a> | 
+            <a href="#">Datenschutz</a> | 
+            <a href="#faq">FAQ</a> | 
+            <a href="#">Sitemap</a> | 
+            <a href="#" onclick="alert('Cookie-Präferenzen geöffnet.'); return false;">Cookie-Einstellungen ändern</a>
+        </div>
+        <p>&copy; 2026 STEELCITYNAILS Eisenhüttenstadt. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>

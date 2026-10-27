@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Beauty - Minimalistic Luxury</title>
+    <style>
+        /* Deine Farbpalette */
+        :root {
+            --color-body-bg: #F5EDE4;      /* Soft Alabaster */
+            --color-body-bg2: #E5C4AD;     /* Warm Sand */
+            --color-text-primaer: #2A2A21; /* Espresso Dark */
+            --color-text-link: #7D5C4C;    /* Soft Chestnut */
+            --color-text-hover: #2A2A21;   /* Espresso Dark */
+            --color-border: #D1BCB0;       /* Muted Sandstone */
+            --color-icon-logo: #5C4D46;    /* Deep Taupe */
+            --color-button1: #A36A53;      /* Terrakotta */
+            --color-button2: #7A8475;      /* Gedecktes Salbeigrün */
+        }
+
+        /* Globale Stile */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--color-body-bg);
+            color: var(--color-text-primaer);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid var(--color-border);
+            background-color: rgba(245, 237, 228, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-icon-logo);
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--color-icon-logo);
+        }
+
+        nav a {
+            color: var(--color-text-link);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-text-hover);
+            text-decoration: underline;
+        }
+
+        /* Hero Sektion */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 8%;
+            /* Nutzung des Gradients aus deinen beiden Hintergrundfarben */
+            background: linear-gradient(135deg, var(--color-body-bg) 0%, var(--color-body-bg2) 100%);
+            min-height: 70vh;
+        }
+
+        .hero-content {
+            max-width: 500px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background-color: var(--color-button1);
+            color: #FFFFFF;
+            margin-right: 15px;
+        }
+
+        .btn-secondary {
+            background-color: var(--color-button2);
+            color: #FFFFFF;
+        }
+
+        .hero-image {
+            width: 45%;
+            min-height: 350px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-icon-logo);
+            font-style: italic;
+        }
+
+        /* Produkt- / Feature-Sektion */
+        .features {
+            padding: 80px 8%;
+            background-color: var(--color-body-bg);
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.4);
+            padding: 40px 30px;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            text-align: left;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(92, 77, 70, 0.05);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            fill: var(--color-icon-logo);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-body-bg2);
+            padding: 40px 8%;
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+            font-size: 0.9rem;
+            color: var(--color-icon-logo);
+        }
+
+        /* Mobile Optimierung */
+        @media (max-width: 768px) {
+            header { padding: 15px 5%; }
+            .hero { flex-direction: column; text-align: center; padding: 60px 5%; gap: 40px; }
+            .hero-content { max-width: 100%; }
+            .hero-image { width: 100%; min-height: 250px; }
+            .btn { margin: 5px; }
+            .btn-primary { margin-right: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="logo">
+            <!-- Beispiel SVG Icon unter Verwendung der Icon-Farbe -->
+            <svg class="logo-icon" viewBox="0 0 24 24">
+                <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 6c2.76 0 5 2.24 5 5v7h-2v-7c0-1.66-1.34-3-3-3s-3 1.34-3 3v7H7v-7c0-2.76 2.24-5 5-5z"/>
+            </svg>
+            AURA SKIN
+        </div>
+        <nav>
+            <a href="#">Shop</a>
+            <a href="#">Philosophie</a>
+            <a href="#">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Hero Bereich -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Natürliche Schönheit, wissenschaftlich verfeinert.</h1>
+            <p>Erlebe minimalistische Hautpflege, die deiner Haut genau das gibt, was sie zum Strahlen braucht. Ohne Kompromisse.</p>
+            <a href="#" class="btn btn-primary">Jetzt Entdecken</a>
+            <a href="#" class="btn btn-secondary">Mehr Erfahren</a>
+        </div>
+        <div class="hero-image">
+            [ Platzhalter für Produktbild / Aesthetic Campaign Visual ]
+        </div>
+    </section>
+
+    <!-- Feature Sektion -->
+    <section class="features">
+        <h2>Warum Aura Skin?</h2>
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24">
+                    <path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm-1-15v4H7v2h4v4h2v-4h4v-2h-4V7h-2z"/>
+                </svg>
+                <h3>Clean Ingredients</h3>
+                <p>100% vegane, tierversuchsfreie Inhaltsstoffe, sorgfältig ausgewählt für maximale Verträglichkeit.</p>
+                <a href="#" style="color: var(--color-text-link); font-weight: 500; text-decoration: none;">Inhaltsstoffe ansehen &rarr;</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24">
+                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+                <h3>Sinnliches Erlebnis</h3>
+                <p>Zarte Texturen und unaufdringliche, natürliche Düfte machen deine tägliche Routine zum Spa-Moment.</p>
+                <a href="#" style="color: var(--color-text-link); font-weight: 500; text-decoration: none;">Mehr erfahren &rarr;</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/>
+                </svg>
+                <h3>Nachhaltiger Luxus</h3>
+                <p>Verpackungen aus recyceltem Glas und CO₂-neutraler Versand für ein reines Gewissen.</p>
+                <a href="#" style="color: var(--color-text-link); font-weight: 500; text-decoration: none;">Unsere Mission &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 AURA SKIN Cosmetics. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>

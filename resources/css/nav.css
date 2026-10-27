@@ -1,237 +1,162 @@
-/* ./style/nav.css */
+/* ./style/nav.scss */
 
 nav {
-    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem 2rem 1rem;
 
-    .site-header {
-        padding: 1rem;
-        display: flex;
+    .nav-links {
+        display: none;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
+        min-width: 100px;
+        height: 64px;
+        border: 3px solid red;
+        /* TODO: Entfernen, wenn fertig */
+    }
 
-        .liquid-nav {
+    .nav-buchen-top {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-width: 100px;
+        height: 64px;
+        border: 3px solid red;
+        /* TODO: Entfernen, wenn fertig */
+    }
+
+    .nav-hamburger {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 64px;
+
+        /* Das Kontrollkästchen unsichtbar machen */
+        .menu-checkbox {
+            display: none;
+        }
+
+        /* Das Overlay-Menü (Standard: Unsichtbar) */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100dvh;
+            background: linear-gradient(to right, var(--color-body-bg), var(--color-body-bg2));
+            background-attachment: fixed;
+            z-index: 9999;
             display: flex;
-            position: relative;
-            width: 240px;
-            max-width: 100%;
-            padding: 0.5rem;
-            border-radius: 1rem;
-            overflow: hidden;
+            flex-direction: column;
+            padding: 1rem;
 
-            /* s */
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-100%);
+            transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
 
-            /* backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px); */
-
-            box-shadow:
-                0 1rem 2rem rgba(0, 0, 0, 0.45),
-                inset 0 1px 1px rgba(255, 255, 255, 0.18);
-
-            .liquid-glare {
-                /* Der Schein um den Cursor */
-                position: absolute;
-                inset: 0;
-                opacity: 0;
-                pointer-events: none;
-                background: radial-gradient(circle 90px at var(--x, 50%) var(--y, 50%),
-                        rgba(0, 255, 0, 0.22),
-                        transparent 70%);
-                transition: opacity 0.25s ease;
+            .mobile-menu-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.5rem 1rem 2rem 1rem;
             }
 
-            &:hover {
-                .liquid-glare {
-                    opacity: 1;
-                }
-            }
-
-            .nav-items {
-                position: relative;
+            .mobile-menu-links {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                width: 100%;
-                gap: 0.25rem;
+                justify-content: center;
+                flex-grow: 1;
+                gap: 1.5rem;
 
-                .active-pill {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: auto;
-                    border-radius: 999px;
-                    background: rgba(255, 255, 255, 0.18);
-                    box-shadow:
-                        inset 0 1px 1px rgba(255, 255, 255, 0.25),
-                        0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
-                }
-
-                .nav-link {
-                    position: relative;
-                    z-index: 1;
-                    display: flex;
-                    padding: 0.75rem 0.75rem;
-                    border-radius: 999px;
-                    width: 100%;
-                    max-width: 14rem;
-                    justify-content: center;
-                    align-items: normal;
+                a {
+                    font-size: 1.5rem;
+                    font-weight: bold;
                     color: var(--color-text-link);
-                    text-align: center;
                     text-decoration: none;
-                    font-weight: 600;
-                    white-space: nowrap;
-                    gap: 0.25rem;
-
-                    transition: color 0.25s ease;
+                    transition: color 0.3s ease;
 
                     &:hover {
                         color: var(--color-text-hover);
                     }
-
-                    &.active {
-                        color: var(--color-text-active);
-                    }
-
-                    svg {
-                        flex-shrink: 0;
-                        display: block;
-                    }
                 }
+            }
+        }
+
+        /* DER TRICK: Wenn die Checkbox angeklickt ist, zeige das Menü */
+        .menu-checkbox:checked~.mobile-menu-overlay {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* NEU: Verstecke den Hamburger, wenn die Checkbox angeklickt ist */
+        .menu-checkbox:checked~.hamburger-btn {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            /* Verhindert, dass man ihn noch anklicken kann */
+        }
+    }
+
+    /* Der Hamburger Button (als Label) */
+    .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10000;
+        color: var(--color-icon-logo);
+        width: 100px;
+        height: 64px;
+
+        /* Das SVG Icon stylen */
+        .icon-navmenu {
+            width: 30px;
+            height: 30px;
+            transition: color 0.3s ease;
+            color: var(--color-icon-logo);
+
+            &:hover {
+                color: var(--color-icon-logo-hover);
             }
         }
     }
 }
 
-
-@media (min-width: 481px) {
-
-    /* Mobile Landscape */
-    nav {
-        .site-header {
-            flex-direction: row;
-            padding: 0 0 1rem 0;
-
-            .liquid-nav {
-                flex-direction: row;
-                width: fit-content;
-                border-radius: 999px;
-
-                .nav-items {
-                    flex-direction: row;
-                    align-items: stretch;
-                    width: auto;
-
-                    .active-pill {
-                        height: 100%;
-                    }
-
-                    .nav-link {
-                        width: auto;
-                        max-width: none;
-                        text-align: left;
-                        padding: 0.75rem 0.75rem;
-
-                        svg {
-                            display: none;
-                        }
-                    }
-                }
-            }
-        }
-    }
+/* GLOBAL: Scrollen im Hintergrund verhindern, wenn Menü offen ist */
+body:has(.menu-checkbox:checked),
+html:has(.menu-checkbox:checked) {
+    overflow: hidden;
+    height: 100%;
+    /* Verhindert Scrollen auf iOS */
+    touch-action: none;
+    /* Blockiert Touch-Gesten */
 }
 
-@media (min-width: 768px) {
-
-    /* Tablet Portrait */
+/* Laptop / Desktop (ab 1024px) */
+@media (min-width: 1024px) {
     nav {
-        .site-header {
-            flex-direction: row;
-            padding: 0 0 1rem 0;
-
-            .liquid-nav {
-                flex-direction: row;
-                width: fit-content;
-                border-radius: 999px;
-
-                .nav-items {
-                    flex-direction: row;
-                    align-items: stretch;
-                    width: auto;
-
-                    .active-pill {}
-
-                    .nav-link {
-                        padding: 0.75rem 0.75rem;
-
-                        svg {
-                            display: block;
-                        }
-                    }
-                }
-            }
+        .nav-links {
+            display: flex;
         }
-    }
-}
 
-@media (min-width: 1025px) {
-
-    /* Laptop / Desktop */
-    nav {
-        .site-header {
-            flex-direction: row;
-            padding: 0 0 1rem 0;
-
-            .liquid-nav {
-                flex-direction: row;
-                width: fit-content;
-                border-radius: 999px;
-
-                .nav-items {
-                    flex-direction: row;
-                    align-items: stretch;
-                    width: auto;
-
-                    .active-pill {}
-
-                    .nav-link {
-                        padding: 0.75rem 1rem;
-
-                        svg {}
-                    }
-                }
-            }
+        .nav-buchen-top {
+            display: flex;
         }
-    }
-}
 
-@media (min-width: 1281px) {
-
-    /* Desktop */
-    nav {
-        .site-header {
-            flex-direction: row;
-            padding: 0 0 1rem 0;
-
-            .liquid-nav {
-                flex-direction: row;
-                width: fit-content;
-                border-radius: 999px;
-
-                .nav-items {
-                    flex-direction: row;
-                    align-items: stretch;
-                    width: auto;
-
-                    .active-pill {}
-
-                    .nav-link {
-                        padding: 0.75rem 2rem;
-
-                        svg {}
-                    }
-                }
-            }
+        /* Hamburger auf dem Desktop ausblenden */
+        .nav-hamburger {
+            display: none;
         }
     }
 }

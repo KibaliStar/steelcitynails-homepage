@@ -57,12 +57,12 @@
 </head>
 
 <body>
-    <header>
-        @include('partials.header')
-    </header>
     <nav>
         @include('partials.nav')
     </nav>
+    <header>
+        @include('partials.header')
+    </header>
     <main>
         @yield('content')
     </main>
