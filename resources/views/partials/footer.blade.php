@@ -1,6 +1,8 @@
 <div class="footer-container">
     <div class="footer-studioname">
-        Bumblebee Tattoo
+        <a href="{{ route('home') }}" class="site-logo site-logo-footer" id="top">
+    <x-logo />
+</a>
     </div>
     <div class="footer-studioadresse">
         Fröbelringpassage 24/25, 15890 Eisenhüttenstadt

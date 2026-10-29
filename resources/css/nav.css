@@ -7,32 +7,28 @@ nav {
     align-items: center;
     margin: 1rem auto;
     width: var(--contentWidth);
+    gap: 2rem;
+
+    .site-logo {
+        margin-left: 3rem;
+    }
 
     .nav-links {
-        /* Flexbox sorgt dafür, dass alles in EINER Zeile ist */
         display: none;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
-        /* Abstand zwischen den Links */
+        gap: 1.5rem;
 
-        /* Serifenlose Schrift (System-Fonts für schnelle Ladezeit) */
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 1.0rem;
-        /* Angenehme Größe */
         font-weight: 400;
-        /* Etwas kräftiger für bessere Lesbarkeit */
 
         a {
             color: var(--color-text-primaer);
             text-decoration: none;
             text-transform: uppercase;
-            /* Optional: Macht es edler (Großbuchstaben) */
-            letter-spacing: 1px;
-            /* Optional: Leichter Buchstabenabstand für Premium-Look */
             position: relative;
-            /* Wichtig für den Unterstrich-Effekt */
             padding: 0.125rem 0;
             transition: color 0.3s ease;
 
@@ -65,13 +61,6 @@ nav {
 
     .nav-buchen-top {
         display: none;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        min-width: 100px;
-        height: 64px;
-        border: 3px solid red;
-        /* TODO: Entfernen, wenn fertig */
     }
 
     .nav-hamburger {
@@ -122,7 +111,7 @@ nav {
                 flex-grow: 1;
                 gap: 1.5rem;
 
-                a {
+                .a_links {
                     font-size: 1.5rem;
                     font-weight: bold;
                     color: var(--color-text-link);

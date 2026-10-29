@@ -2,16 +2,17 @@
 <a href="{{ route('home') }}" class="site-logo" id="top">
     <x-logo />
 </a>
-<nav class="nav-links">
-    <a href="#home-angebot">Angebot</a>
-    <a href="#home-ueber-mich">Über Mich</a>
-    <a href="#home-nageldesign">Nageldesign</a>
-    <a href="#home-visagistik">Visagistik</a>
-    <a href="#home-kontakt">Kontakt</a>
-</nav>
-<div class="nav-buchen-top">
-    buchen-top
+<div class="nav-links">
+    <a href="{{ route('home') }}#home-angebot">Angebot</a>
+    <a href="{{ route('home') }}#home-ueber-mich">Über Mich</a>
+    <a href="{{ route('home') }}#home-nageldesign">Nageldesign</a>
+    <a href="{{ route('home') }}#home-visagistik">Visagistik</a>
+    <a href="{{ route('home') }}#home-kontakt">Kontakt</a>
 </div>
+<div class="nav-buchen-top">
+    <a href="{{ route('buchen') }}" class="btn">Buche einen Termin</a>
+</div>
+
 <div class="nav-hamburger">
     <!-- 1. Das unsichtbare Kontrollkästchen (muss VOR dem Menü stehen) -->
     <input type="checkbox" id="menu-toggle" class="menu-checkbox" aria-hidden="true">
@@ -46,11 +47,12 @@
 
         <!-- Die Links -->
         <div class="mobile-menu-links">
-            <a href="{{ route('home') }}#home-angebot">Angebot</a>
-            <a href="{{ route('home') }}#home-ueber-mich">Über Mich</a>
-            <a href="{{ route('home') }}#home-nageldesign">Nageldesign</a>
-            <a href="{{ route('home') }}#home-visagistik">Visagistik</a>
-            <a href="{{ route('home') }}#home-kontakt">Kontakt</a>
+            <a href="{{ route('buchen') }}" class="btn">Buche einen Termin</a>
+            <a href="{{ route('home') }}#home-angebot" class="a_links">Angebot</a>
+            <a href="{{ route('home') }}#home-ueber-mich" class="a_links">Über Mich</a>
+            <a href="{{ route('home') }}#home-nageldesign" class="a_links">Nageldesign</a>
+            <a href="{{ route('home') }}#home-visagistik" class="a_links">Visagistik</a>
+            <a href="{{ route('home') }}#home-kontakt" class="a_links">Kontakt</a>
         </div>
     </div>
 </div>

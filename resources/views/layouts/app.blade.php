@@ -76,7 +76,7 @@
 
     <!-- Fallback, falls JavaScript deaktiviert ist -->
     <noscript>
-        <img src="https://seoexpert.trinkbecherdepot.de/track.php?site=tattoo&amp;url={{ request()->path() }}"
+        <img src="https://seoexpert.trinkbecherdepot.de/track.php?site=nageldesign&amp;url={{ request()->path() }}"
             width="1" height="1" alt="" style="display:none;">
     </noscript>
     <!-- ENDE EIGENES ANALYTICS TRACKING -->

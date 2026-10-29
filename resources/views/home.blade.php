@@ -20,13 +20,20 @@
             <div class="home-section-block">
                 <div class="textseite">
                     <h2 style="margin: 0.5rem auto;">Nail Care</h2>
-                    <div class="h1_text" style="margin: 0.5rem auto; font-size: 48px;">
-                        ENJOY THE BEST NAIL CARE IN EHST
+                    <div class="h1_text">
+                        ENJOY THE BEST NAIL CARE IN EISENHÜTTENSTADT
                     </div>
                     <h3 style="margin: 0.5rem auto; font-weight: 700;">Make your nails perfect right now!</h3>
-                    <button>Buchungs-Button</button>
+                    <div style="margin-top: 1rem;">
+                        <a href="{{ route('buchen') }}" class="btn">Buche einen Termin</a>
+                    </div>
                 </div>
-                <div class="bildseite">Bild</div>
+                <div class="bildseite">
+                    <picture class="hero_img">
+                        <source srcset="{{ asset('images/Bild04.avif') }}" type="image/avif">
+                        <img src="{{ asset('images/Bild04.png') }}" alt="Steelcitynails Welcome Picture">
+                    </picture>
+                </div>
             </div>
             <div class="top-link">
                 <a href="#top">
@@ -88,6 +95,11 @@
             </a>
         </div>
     </section>
+    <section id="home-produkte" class="home-section">
+        <div class="home-section-block">
+            <h2>Produkte</h2>
+        </div>
+    </section>
     <section id="home-visagistik" class="home-section">
         <div class="home-section-block">
             <div class="textseite">
@@ -100,6 +112,11 @@
             <a href="#top">
                 <x-toparrow />
             </a>
+        </div>
+    </section>
+    <section id="home-rezensionen" class="home-section">
+        <div class="home-section-block">
+            <h2>Kundenmeinungen</h2>
         </div>
     </section>
     <section id="home-kontakt" class="home-section">
