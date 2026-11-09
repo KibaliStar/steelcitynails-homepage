@@ -19,11 +19,11 @@
         <section id="home-angebot" class="home-section">
             <div class="home-section-block">
                 <div class="textseite">
-                    <h2 style="margin: 0.5rem auto;">Nail Care</h2>
+                    <h2>Nail Care</h2>
                     <div class="h1_text">
                         ENJOY THE BEST NAIL CARE IN EISENHÜTTENSTADT
                     </div>
-                    <h3 style="margin: 0.5rem auto; font-weight: 700;">Make your nails perfect right now!</h3>
+                    <h4>Make your nails perfect right now!</h4>
                     <div style="margin-top: 1rem;">
                         <a href="{{ route('buchen') }}" class="btn">Buche einen Termin</a>
                     </div>
@@ -49,13 +49,13 @@
     {{-- Der Buchen-Button Routet zu einer Seite mit Iframe SuperSass-Buchung  --}}
 
     <section id="home-angebot" class="home-section">
-        <div class="home-section-block" style="flex-direction: row-reverse;">
-            <div class="textseite">
-                <h2>Angebot</h2>
-                Was bieten wir an<br>
-                Nageldesign ab 20€, MakeUp ab 30€
-            </div>
-            <div class="bildseite">Bild</div>
+        <div class="home-section-wide">
+            <h2>Angebot</h2>
+            <h3>AUSGEWÄHLTE SERVICES</h3>
+            <h4>Verschiedene Behandlungen für Gesicht und Hände</h4>
+            Was bieten wir an<br>
+            Nageldesign ab 20€, MakeUp ab 30€
+            <div class="">ServiceSlider</div>
         </div>
         <div class="top-link">
             <a href="#top">
@@ -63,11 +63,13 @@
             </a>
         </div>
     </section>
+
     <section id="home-ueber-mich" class="home-section">
         <div class="home-section-block">
             <div class="textseite">
                 <h2>Über Mich</h2>
-
+                <h3>Willkommen</h3>
+                <h4>SteelCityNail ist der ideale Ort für hochwertige Nagelpflege und Visagistik in einer gemüthlichen Atmosphere</h4>
                 Geschichte, Erfahre mehr, Tel, FAQ-Seite<br>
                 Tabelle:
                 Sterile Tools, Zertifikate, Produkte 100+ Colors, Brands
