@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import './header.css';
+/* @import './header.css'; */
 @import './nav.css';
 @import './footer.css';
 @import './faqfieldset.css';
@@ -56,8 +56,8 @@
     /* Soft Alabaster (Haupt-Hintergrund) */
     --color-body-bg2: #E5C4AD;
     /* Warm Sand (Verlauf & Footer) */
-    --color-text-primaer: #2A2A21;
-    /* Espresso Dark (Standard-Text & Hover) */
+    --color-text-primaer: #66665A;
+    /* Ashton Grey (Standard-Text & Hover) */
     --color-text-link: #7D5C4C;
     /* Soft Chestnut (Klickbare Links & Textlinks) */
     --color-text-hover: #2A2A21;
@@ -83,16 +83,20 @@
     --color-shadow: rgba(92, 77, 70, 0.05);
     /* Softe Schattenfarbe (Basierend auf Deep Taupe für weiche Tiefe) */
 
-    --color-h2: #C08B82;
+    --color-h1: #2A2A21;
+    /* Espresso Dark */
+    /* --color-h2: #C08B82; */
     /* Dusty Rose */
+    --color-h2: #ce7f86;
     --color-h3: #222222;
-    --color-h4: #222222;
-    --color-h5: #222222;
+    --color-h4: #555555;
+    --color-h5: #555555;
 
 }
 
 :root {
     --contentWidth: 320px;
+    --text-base: 1rem;
     --text-h1: 1.5rem;
     --text-h2: 1.35rem;
     --text-h3: 1.5rem;
@@ -110,7 +114,8 @@ body {
     height: 100vh;
     color: var(--color-text-primaer);
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: var(--text-base);
+    font-weight: 600;
     line-height: 1.5;
     margin: 0;
     padding: 1rem;
@@ -127,7 +132,7 @@ main {
     display: block;
     width: 100%;
     text-align: left;
-    color: var(--color-text-primaer);
+    color: var(--color-h1);
 
     /* ABSTÄNDE & GRÖSSE */
     font-size: 22px;
@@ -141,7 +146,7 @@ h1 {
     display: block;
     width: 100%;
     text-align: left;
-    color: var(--color-text-primaer);
+    color: var(--color-h1);
     text-shadow: 2px 4px 4px hsla(0, 0%, 100%, 0.3);
 
     /* ABSTÄNDE & GRÖSSE */
@@ -163,13 +168,12 @@ h2 {
     width: 100%;
     text-align: left;
     color: var(--color-h2);
-
-    /* ABSTÄNDE & GRÖSSE */
     font-size: var(--text-h2);
     line-height: 1.3;
     margin: 0.5rem auto;
-
     font-family: 'Satisfy', cursive;
+    font-weight: 300;
+    font-style: italic;
 }
 
 h3 {
@@ -183,6 +187,7 @@ h3 {
     line-height: 1.4;
     font-weight: 500;
     margin: 0.5rem auto;
+    text-transform: uppercase;
 }
 
 h4 {
@@ -250,12 +255,12 @@ section[id] {
 }
 
 .linkgeschuetzt {
-    color: var(--color-text-link);
+    color: var(--color-button3);
     text-decoration: none;
     transition: color 0.3s ease;
 
     &:hover {
-        color: var(--color-text-hover);
+        color: var(--color-button2);
         text-decoration: underline;
         text-underline-offset: 3px;
     }
@@ -270,9 +275,11 @@ section[id] {
     display: block;
     background-color: var(--color-button3);
     color: var(--color-white-pure);
+    font-size: 1rem;
     font-weight: 600;
     margin: 1rem 0;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 
     &:hover {
         color: var(--color-white-pure);
@@ -302,7 +309,8 @@ section[id] {
             justify-content: flex-start;
             align-items: flex-start;
             width: 100%;
-            background-color: burlywood;
+            /* background-color: burlywood; */
+            border: 3px dotted white;
             padding: 1rem 3rem;
         }
 
@@ -315,7 +323,7 @@ section[id] {
             .hero_img {
                 display: block;
                 width: 100%;
-                height: 400px;
+                /* height: 400px; */
                 overflow: hidden;
 
                 /* Schneidet überstehendes ab */
@@ -361,6 +369,7 @@ section[id] {
 @media (min-width: 480px) {
     :root {
         --contentWidth: 480px;
+        --text-base: 1.2rem;
         --text-h1: 1.75rem;
         --text-h2: 1.75rem;
         --text-h3: 2.25rem;
@@ -406,7 +415,7 @@ section[id] {
 @media (min-width: 1024px) {
 
     :root {
-        --contentWidth: 1024px;
+        --contentWidth: 1014px;
         --text-h1: 1.75rem;
         --text-h2: 1.75rem;
         --text-h3: 3rem;
@@ -431,7 +440,7 @@ section[id] {
 
 @media (min-width: 1280px) {
     :root {
-        --contentWidth: 1280px;
+        --contentWidth: 1270px;
         --text-h1: 1.75rem;
         --text-h2: 1.75rem;
         --text-h3: 3rem;
