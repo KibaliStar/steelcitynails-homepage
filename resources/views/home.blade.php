@@ -6,6 +6,90 @@
 
 @section('styles')
     <style>
+        .home-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: var(--contentWidth);
+            /* border: 3px solid green; */
+            margin-bottom: 2rem;
+
+            .home-section-block {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: stretch;
+                width: var(--contentWidth);
+
+                .textseite {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    width: 100%;
+                    /* background-color: burlywood; */
+                    border: 3px dotted white;
+                    padding: 1rem 3rem;
+                }
+
+                .bildseite {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+
+                    .hero_img {
+                        display: block;
+                        width: 100%;
+                        /* height: 400px; */
+                        overflow: hidden;
+
+                        /* Schneidet überstehendes ab */
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                            display: block;
+                            border: 0.66rem solid white;
+                        }
+                    }
+
+                    /* img {
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                width: 100%;
+                                                height: auto;
+
+                                            } */
+                }
+            }
+
+            .home-section-wide {
+                display: flex;
+                flex-direction: column;
+                width: var(--contentWidth);
+                padding: 1rem 3rem;
+
+                .service_slider {
+                    background-color: white;
+                    padding: 1rem;
+                }
+            }
+
+            .top-link {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-end;
+                margin-right: 2rem;
+                width: var(--contentWidth);
+                padding: 0.5rem;
+            }
+        }
+
         .home_ueber_mich_tel {
             display: flex;
             flex-direction: row;
@@ -105,6 +189,18 @@
             }
         }
 
+        .nail_produkte {
+            display: block;
+            width: 100%;
+            margin: 3rem 0 1rem 0;
+            background-image: url('images/Bild09.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 0.66rem solid white;
+            padding: 1rem 2rem;
+        }
+
         .price_list {
             display: flex;
             flex-direction: column;
@@ -154,6 +250,20 @@
 
 
         @media (min-width: 768px) {
+            .home-section {
+                .home-section-block {
+                    flex-direction: row;
+
+                    .textseite {
+                        width: 66%;
+                    }
+
+                    .bildseite {
+                        width: 34%;
+                    }
+                }
+            }
+
             .staff_grid {
                 grid-template-columns: repeat(2, 1fr);
                 /* Tablet: 2 Spalten → 2x2 */
@@ -161,6 +271,20 @@
         }
 
         @media (min-width: 1024px) {
+            .home-section {
+                .home-section-block {
+                    flex-direction: row;
+
+                    .textseite {
+                        width: 50%;
+                    }
+
+                    .bildseite {
+                        width: 50%;
+                    }
+                }
+            }
+
             .staff_grid {
                 grid-template-columns: repeat(4, 1fr);
                 /* Desktop: 4 Spalten → 4x1 */
@@ -215,7 +339,21 @@
             <h4>Verschiedene Behandlungen für Gesicht und Hände</h4>
             Was bieten wir an<br>
             Nageldesign ab 20€, MakeUp ab 30€
-            <div class="">ServiceSlider</div>
+            <div class="service_slider">
+
+                <x-services-slider :services="[
+                    ['name' => 'Manicure', 'price' => '$12', 'image' => asset('images/Bild01.png')],
+                    ['name' => 'Nail Art', 'price' => '$5', 'image' => asset('images/Bild02.png')],
+                    ['name' => 'Pedicure', 'price' => '$15', 'image' => asset('images/Bild03.png')],
+                    ['name' => 'Treatment', 'price' => '$10', 'image' => asset('images/Bild04.png')],
+                    ['name' => 'Treatment', 'price' => '$10', 'image' => asset('images/Bild05.png')],
+                    ['name' => 'Nail Art', 'price' => '$5', 'image' => asset('images/Bild06.png')],
+                    ['name' => 'Pedicure', 'price' => '$15', 'image' => asset('images/Bild07.png')],
+                    ['name' => 'Treatment', 'price' => '$10', 'image' => asset('images/Bild08.png')],
+                    ['name' => 'Treatment', 'price' => '$10', 'image' => asset('images/Bild09.png')],
+                ]" />
+
+            </div>
         </div>
         <div class="top-link">
             <a href="#top">
@@ -334,7 +472,7 @@
                             <span class="price-row__price">32€</span>
                         </div>
                         <div class="artikel_text">
-                            Erklärung
+                            Klassischer Nagelaufbau mit klarem oder rosa Gel.
                         </div>
                     </div>
 
@@ -388,16 +526,78 @@
     </section>
     <section id="home-produkte" class="home-section">
         <div class="home-section-block">
-            <h2>Produkte</h2>
+            <div class="nail_produkte">
+                <h2>Produkte</h2>
+                <h3>Produkte <br> für Ihre Nagelpflege</h3>
+                Kaufen Sie Feilen, Buffer, Pflegeöl bei und im Salon.
+                <div style="margin-top: 3rem;">
+                    <a href="{{ route('buchen') }}" class="btn">Erfahre mehr</a>
+                </div>
+            </div>
         </div>
     </section>
     <section id="home-visagistik" class="home-section">
         <div class="home-section-block">
             <div class="textseite">
                 <h2>Visagistik</h2>
-                Ein Auszug der Preisliste, Galerielink
+                <h3>Preise Visagistik</h3>
+                Make-up ist Handwerk. Visagistik ist Kunst. Exzellenz ist unser Maßstab.
+                <div class="price_list">
+
+                    <div class="price_list_artikel">
+                        <div class="price-row">
+                            <span class="price-row__name">Tages MakeUp</span>
+                            <span class="price-row__line"></span>
+                            <span class="price-row__price">30€</span>
+                        </div>
+                        <div class="artikel_text">
+                            Stylisches MakeUp für jede Gelegenheit bei Tageslicht und für Ihre Top-Fotoaufnahmen.
+                        </div>
+                    </div>
+
+                    <div class="price_list_artikel">
+                        <div class="price-row">
+                            <span class="price-row__name">Abend MakeUp</span>
+                            <span class="price-row__line"></span>
+                            <span class="price-row__price">45€</span>
+                        </div>
+                        <div class="artikel_text">
+                            MakeUp mit kräftigen Kontrasten, ideal für schwächeres Licht.
+                        </div>
+                    </div>
+
+                    <div class="price_list_artikel">
+                        <div class="price-row">
+                            <span class="price-row__name">Probe MakeUp für Hochzeiten</span>
+                            <span class="price-row__line"></span>
+                            <span class="price-row__price">30€</span>
+                        </div>
+                        <div class="artikel_text">
+                            Wir findes das MakeUp für Ihre Hochzeit, Liste benötigter Materialien, Bestell-Liste. In unserem
+                            Studio.
+                        </div>
+                    </div>
+
+                    <div class="price_list_artikel">
+                        <div class="price-row">
+                            <span class="price-row__name">Hochzeits-MakeUp</span>
+                            <span class="price-row__line"></span>
+                            <span class="price-row__price">55€</span>
+                        </div>
+                        <div class="artikel_text">
+                            Das erprobte Hochzeits-MakeUp bei uns im Studio oder gegen Aufpreis bei Ihnen vor Ort.
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="bildseite">Bild</div>
+            <div class="bildseite">
+                <picture class="hero_img" style="height: 630px;">
+                    <source srcset="{{ asset('images/Bild06.avif') }}" type="image/avif">
+                    <img src="{{ asset('images/Bild06.png') }}" alt="Steelcitynails Welcome Picture"
+                        style="transform: scaleX(-1);  display: inline-block;">
+                </picture>
+            </div>
         </div>
         <div class="top-link">
             <a href="#top">
