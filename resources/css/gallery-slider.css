@@ -1,0 +1,98 @@
+.gallery-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.gallery-slide {
+    display: flex;
+    justify-content: center;
+    /* zentriert das 300px-Bild im Slide */
+    outline: none;
+}
+
+.gallery-slide .picture {
+    position: relative;
+    display: block;
+    width: 300px;
+    /* fixe Breite */
+    height: 300px;
+    /* fixe Höhe */
+    max-width: 100%;
+    /* auf sehr schmalen Screens nicht überlaufen */
+    overflow: hidden;
+}
+
+.gallery-slide .picture img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* schneidet überstehendes ab */
+    object-position: center;
+    /* zentriert den Ausschnitt */
+    display: block;
+}
+
+/* Pfeile */
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #38334f;
+    cursor: pointer;
+    z-index: 10;
+    opacity: .85;
+    transition: opacity .2s ease-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-arrow:hover {
+    opacity: 1;
+}
+
+.gallery-arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: #faefed;
+}
+
+.gallery-arrow.prev {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.gallery-arrow.next {
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.gallery-arrow.prev svg {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 767px) {
+    .gallery-arrow {
+        width: 24px;
+        height: 24px;
+    }
+
+    .gallery-arrow svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .gallery-arrow.prev {
+        transform: translate(-12px, -50%);
+    }
+
+    .gallery-arrow.next {
+        transform: translate(12px, -50%);
+    }
+}

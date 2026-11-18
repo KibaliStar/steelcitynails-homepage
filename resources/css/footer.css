@@ -20,7 +20,9 @@ footer {
 
         .footer-studioadresse {}
 
-        .footer-kontakt {}
+        .footer-kontakt {
+            font-size: 0.8rem;
+        }
 
         .footer-agb-imp-dat {
             display: flex;

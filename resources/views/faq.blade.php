@@ -25,7 +25,9 @@
 @endsection
 
 @section('content')
-    <h1> Fragen und Antworten </h1>
+    <div class="standard-section-left">
+        <h1 style="display: none;">Fragen und Antworten</h1>
+        <h2>Fragen und Antworten</h2>
 
     <div class="question" id="faq01">
         <span class="text-2xl text-text-studio-slogan">Welche Leistungen bieten Sie in Ihrem Studio an?</span><br>
@@ -51,7 +53,7 @@
         <ul>
             <li><b>Neumodellage:</b> Je nach Aufwand und Länge (Preise auf Anfrage oder im Studio)</li>
             <li><b>Auffüllen:</b> Regelmäßiges Auffüllen alle 3-4 Wochen wird empfohlen</li>
-            <li><b>Zahlungsart:</b> Bar oder per Überweisung</li>
+            <li><b>Zahlungsart:</b> Bar oder per WERO</li>
         </ul>
         <p>Da der Preis stark von Länge, Form und dem gewünschten Design (z.B. aufwendiges OneStroke) abhängt, besprechen wir alle Kosten transparent im Voraus bei Ihrer Terminanfrage.
         </p>

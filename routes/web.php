@@ -10,8 +10,10 @@ Route::get('/qr', fn() => view('home'))->name('qrhome');
 Route::get('/qrcode', fn() => view('qrcode'))->name('qrcode');
 Route::get('/nageldesign', fn() => view('nageldesign'))->name('nageldesign');
 Route::get('/visagistik', fn() => view('visagistik'))->name('visagistik');
+Route::get('/about', fn() => view('about'))->name('about');
 Route::get('/buchen', fn() => view('buchen'))->name('buchen');
 Route::get('/galerie', fn() => view('galerie'))->name('galerie');
+Route::get('/produkte', fn() => view('produkte'))->name('produkte');
 Route::get('/studio', fn() => view('studio'))->name('studio');
 // Route::get('/anfrage', fn() => view('anfrage'))->name('anfrage');
 Route::get('/anfrage/{thema?}', function ($thema = 'tattoo') {
@@ -25,6 +27,7 @@ Route::get('/impressum', fn() => view('impressum'))->name('impressum');
 Route::get('/datenschutz', fn() => view('datenschutz'))->name('datenschutz');
 Route::get('/faq', fn() => view('faq'))->name('faq');
 Route::get('/sitemap', fn() => view('sitemap'))->name('sitemap');
+Route::get('/wero', fn() => view('wero'))->name('wero');
 
 Route::get('/sitemap.xml', function () {
     $lastMod = function (string $view): \Carbon\Carbon {
@@ -38,19 +41,24 @@ Route::get('/sitemap.xml', function () {
     return Sitemap::create()
         ->add(Url::create('/')->setPriority(1.0)->setLastModificationDate($lastMod('home')))
         ->add(Url::create('/qr')->setPriority(1.0)->setLastModificationDate($lastMod('home')))
-        ->add(Url::create('/tattoo')->setPriority(0.9)->setLastModificationDate($lastMod('tattoo')))
-        ->add(Url::create('/piercing')->setPriority(0.9)->setLastModificationDate($lastMod('piercing')))
+        ->add(Url::create('/nageldesign')->setPriority(0.9)->setLastModificationDate($lastMod('nageldesign')))
+        ->add(Url::create('/visagistik')->setPriority(0.9)->setLastModificationDate($lastMod('visagistik')))
         ->add(Url::create('/galerie')->setPriority(0.8)->setLastModificationDate($lastMod('galerie')))
         ->add(Url::create('/studio')->setPriority(0.7)->setLastModificationDate($lastMod('studio')))
-        ->add(Url::create('/anfrage')->setPriority(0.8)->setLastModificationDate($lastMod('anfrage')))
-        ->add(Url::create('/kontakt')->setPriority(0.8)->setLastModificationDate($lastMod('kontakt')))
-        ->add(Url::create('/anfahrt')->setPriority(0.6)->setLastModificationDate($lastMod('anfahrt')))
+        ->add(Url::create('/about')->setPriority(0.6)->setLastModificationDate($lastMod('about')))
         ->add(Url::create('/agb')->setPriority(0.3)->setLastModificationDate($lastMod('agb')))
-        ->add(Url::create('/impressum')->setPriority(0.3)->setLastModificationDate($lastMod('impressum')))
+        ->add(Url::create('/anfahrt')->setPriority(0.6)->setLastModificationDate($lastMod('anfahrt')))
+        ->add(Url::create('/anfrage')->setPriority(0.8)->setLastModificationDate($lastMod('anfrage')))
+        ->add(Url::create('/buchen')->setPriority(0.8)->setLastModificationDate($lastMod('buchen')))
         ->add(Url::create('/datenschutz')->setPriority(0.3)->setLastModificationDate($lastMod('datenschutz')))
         ->add(Url::create('/faq')->setPriority(0.7)->setLastModificationDate($lastMod('faq')))
-        ->add(Url::create('/sitemap')->setPriority(0.2)->setLastModificationDate($lastMod('sitemap')))
+        ->add(Url::create('/impressum')->setPriority(0.3)->setLastModificationDate($lastMod('impressum')))
+        ->add(Url::create('/kontakt')->setPriority(0.8)->setLastModificationDate($lastMod('kontakt')))
         ->add(Url::create('/qrcode')->setPriority(1.0)->setLastModificationDate($lastMod('qrcode')))
+        ->add(Url::create('/sitemap')->setPriority(0.2)->setLastModificationDate($lastMod('sitemap')))
+        ->add(Url::create('/qr')->setPriority(1.0)->setLastModificationDate($lastMod('home')))
+        ->add(Url::create('/qrcode')->setPriority(1.0)->setLastModificationDate($lastMod('qrcode')))
+        ->add(Url::create('/wero')->setPriority(0.8)->setLastModificationDate($lastMod('wero')))
         ->toResponse(request());
 });
 

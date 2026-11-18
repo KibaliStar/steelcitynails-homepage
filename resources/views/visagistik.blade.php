@@ -2,8 +2,7 @@
 
 @section('title', 'Visagistik')
 
-@section('description',
-    'Steelcitynails dein Nagelstudio in Eisenhüttenstadt, hier erfährst du mehr über Visagistik und Make Up.')
+@section('description', 'Steelcitynails dein Nagelstudio in Eisenhüttenstadt, hier erfährst du mehr über Visagistik und Make Up.')
 
 @section('styles')
     <style>
@@ -12,7 +11,10 @@
 @endsection
 
 @section('content')
-    <h1>Visagistik und Make Up</h1>
+    <div class="standard-section-left">
+        <h1 style="display: none;">Visagistik und Make Up</h1>
+        <h2>Visagistik und Make Up</h2>
+    </div>
 
 
 @endsection

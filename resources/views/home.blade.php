@@ -56,26 +56,213 @@
                         }
                     }
 
-                    /* img {
-                                                display: flex;
-                                                justify-content: center;
-                                                align-items: center;
-                                                width: 100%;
-                                                height: auto;
+                    /* NEU: Hintergrundbild-Container */
+                    .bg-image-container {
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        height: 630px;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        border: 0.66rem solid white;
 
-                                            } */
+                        .overlay-btn {
+                            position: absolute;
+                            bottom: 2rem;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+
+            .staff_grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                /* Mobil: 1 Spalte → 1x4 */
+                justify-content: space-between;
+                align-items: flex-start;
+                margin: 3rem 0 1rem 0;
+
+                .staff_card {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    margin: 0.5rem;
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    background-color: #ffffff50;
+
+                    .staff_card_oben {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        min-height: 160px;
+
+                        .staff_card_logo {
+                            display: block;
+                            flex: 0 0 64px;
+                            width: 64px;
+                            height: 64px;
+                            color: var(--color-h2);
+                        }
+
+                        .staff_card_text {
+                            flex: 1 1 auto;
+                            min-width: 0;
+                            padding-left: 1rem;
+
+                            .staff_title {
+                                display: block;
+                                width: 100%;
+                                text-align: left;
+                                color: var(--color-h4);
+                                font-size: 1.5rem;
+                                line-height: 1.2;
+                                font-weight: 700;
+                                font-family: 'Playfair Display', serif;
+                                margin: 0.25rem auto;
+                            }
+                        }
+                    }
+
+                    .staff_card_link {
+                        width: 100%;
+                        text-align: center;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        font-weight: 800;
+                        font-size: calc(var(--text-base) * 0.8);
+                        color: var(--color-button3);
+                        margin-top: 0.75rem;
+                        transition: color 0.3s ease;
+
+                        &:hover {
+                            text-decoration: underline;
+                            color: var(--color-button2);
+                        }
+                    }
                 }
             }
 
             .home-section-wide {
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
+                align-items: start-flex;
                 width: var(--contentWidth);
-                padding: 1rem 3rem;
+                padding: 1rem 0;
+                border: 3px dotted yellow;
+
+                h2,
+                h3,
+                h4 {
+                    text-align: center;
+                }
 
                 .service_slider {
                     background-color: white;
                     padding: 1rem;
+                }
+
+                .kontakt_grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    /* Mobil: 1 Spalte → 1x3 */
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    margin: 3rem 0 1rem 0;
+
+                    .kontakt_card {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        margin: 0.5rem;
+                        padding: 1rem;
+                        border-radius: 0.5rem;
+                        background-color: #ffffff50;
+
+                        .kontakt_card_oben {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            min-height: 60px;
+                            padding-bottom: 1.5rem;
+
+                            .kontakt_card_logo {
+                                display: block;
+                                flex: 0 0 64px;
+                                width: 64px;
+                                height: 64px;
+                                color: var(--color-h2);
+                            }
+
+                            .kontakt_card_text {
+                                flex: 1 1 auto;
+                                min-width: 0;
+                                padding-left: 1rem;
+                                font-size: 1rem;
+
+                                .kontakt_title {
+                                    display: block;
+                                    width: 100%;
+                                    text-align: left;
+                                    color: var(--color-h4);
+                                    font-size: 1.5rem;
+                                    line-height: 1.2;
+                                    font-weight: 700;
+                                    font-family: 'Playfair Display', serif;
+                                    margin: 0.25rem auto;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /* Container für den Slider, damit der Link sich daran orientieren kann */
+                .gallery-link-wrapper {
+                    position: relative;
+                    width: 100%;
+
+                    /* Der unsichtbare Link */
+                    .gallery-overlay-link {
+                        position: absolute;
+                        /*
+             * Oben und unten (z.B. 3.5rem) Abstand lassen,
+             * damit die Pfeile oben/unten nicht blockiert werden.
+             */
+                        top: 0.5rem;
+                        bottom: 0.5rem;
+
+                        /*
+             * Links und rechts (z.B. 3rem) Abstand lassen,
+             * damit die Pfeile links und rechts klickbar bleiben.
+             */
+                        left: 3rem;
+                        right: 3rem;
+
+                        z-index: 10;
+                        /* Damit der Link über den Bildern liegt */
+                        cursor: pointer;
+
+                        /* Optional: Ein kleiner Hinweis beim Hover (kannst du auch weglassen) */
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.1);
+                            border-radius: 0.5rem;
+                        }
+                    }
+                }
+
+                /* WICHTIG: Die Pfeile müssen einen höheren z-index haben,
+       damit sie über dem unsichtbaren Link liegen und klickbar bleiben */
+                .gallery-slider-wrapper .gallery-arrow {
+                    z-index: 20;
                 }
             }
 
@@ -88,164 +275,94 @@
                 width: var(--contentWidth);
                 padding: 0.5rem;
             }
-        }
 
-        .home_ueber_mich_tel {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-
-            .icon_div {
-                margin: 1rem;
-                width: 3rem;
-                height: 3rem;
-            }
-
-            .schreibe_uns_div {
+            .home_ueber_mich_tel {
                 display: flex;
-                flex-direction: column;
-
-                .schreibe_uns_text {
-                    color: var(--color-h2);
-                }
-
-                .schreibe_uns_tel {
-                    font-family: 'Playfair Display', serif;
-                    font-size: calc(var(--text-base) * 1.2);
-                    font-weight: 600;
-                }
-            }
-        }
-
-        .staff_grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            /* Mobil: 1 Spalte → 1x4 */
-            justify-content: space-between;
-            align-items: flex-start;
-            margin: 3rem 0 1rem 0;
-
-            .staff_card {
-                display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 justify-content: flex-start;
-                align-items: flex-start;
-                margin: 0.5rem;
-                padding: 1rem;
-                border-radius: 0.5rem;
-                background-color: #ffffff50;
+                align-items: center;
 
-                .staff_card_oben {
+                .icon_div {
+                    margin: 1rem;
+                    width: 3rem;
+                    height: 3rem;
+                }
+
+                .schreibe_uns_div {
                     display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    min-height: 160px;
+                    flex-direction: column;
 
-                    .staff_card_logo {
-                        display: block;
-                        flex: 0 0 64px;
-                        width: 64px;
-                        height: 64px;
+                    .schreibe_uns_text {
                         color: var(--color-h2);
                     }
 
-                    .staff_card_text {
-                        flex: 1 1 auto;
-                        min-width: 0;
-                        padding-left: 1rem;
-
-                        .staff_title {
-                            display: block;
-                            width: 100%;
-                            text-align: left;
-                            color: var(--color-h4);
-                            font-size: 1.5rem;
-                            line-height: 1.2;
-                            font-weight: 700;
-                            font-family: 'Playfair Display', serif;
-                            margin: 0.25rem auto;
-                        }
-                    }
-                }
-
-                .staff_card_link {
-                    width: 100%;
-                    text-align: center;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                    font-weight: 800;
-                    font-size: calc(var(--text-base) * 0.8);
-                    color: var(--color-button3);
-                    margin-top: 0.75rem;
-                    transition: color 0.3s ease;
-
-                    &:hover {
-                        text-decoration: underline;
-                        color: var(--color-button2);
+                    .schreibe_uns_tel {
+                        font-family: 'Playfair Display', serif;
+                        font-size: calc(var(--text-base) * 1.2);
+                        font-weight: 600;
                     }
                 }
             }
-        }
 
-        .nail_produkte {
-            display: block;
-            width: 100%;
-            margin: 3rem 0 1rem 0;
-            background-image: url('images/Bild09.avif');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border: 0.66rem solid white;
-            padding: 1rem 2rem;
-        }
 
-        .price_list {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            justify-content: start-flex;
-            align-items: start-flex;
 
-            .price_list_artikel {
+            .nail_produkte {
+                display: block;
+                width: 100%;
+                margin: 3rem 0 1rem 0;
+                background-image: url('images/Bild09.avif');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border: 0.66rem solid white;
+                padding: 1rem 2rem;
+            }
+
+            .price_list {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                justify-content: start-flex;
-                align-items: start-flex;
-                margin: 1rem 0;
+                justify-content: flex-start;
+                align-items: flex-start;
 
-                .price-row {
+                .price_list_artikel {
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
                     width: 100%;
-                    align-items: flex-end;
-                    gap: 0.25rem;
+                    justify-content: start-flex;
+                    align-items: start-flex;
+                    margin: 1rem 0;
 
-                    .price-row__name,
-                    .price-row__price {
-                        flex: 0 0 auto;
-                        line-height: 1.2;
-                        font-family: 'Playfair Display', serif;
-                        font-size: var(--text-h4);
+                    .price-row {
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        align-items: flex-end;
+                        gap: 0.25rem;
+
+                        .price-row__name,
+                        .price-row__price {
+                            flex: 0 0 auto;
+                            line-height: 1.2;
+                            font-family: 'Playfair Display', serif;
+                            font-size: var(--text-h4);
+                        }
+
+                        .price-row__line {
+                            flex: 1 1 auto;
+                            border-bottom: 2px dotted currentColor;
+                            opacity: 0.4;
+                            margin-bottom: 0.2em;
+                            /* hebt die Linie auf Höhe der Textunterkante */
+                        }
                     }
 
-                    .price-row__line {
-                        flex: 1 1 auto;
-                        border-bottom: 2px dotted currentColor;
-                        opacity: 0.4;
-                        margin-bottom: 0.2em;
-                        /* hebt die Linie auf Höhe der Textunterkante */
+                    .artikel_text {
+                        font-size: calc(var(--text-base) * 0.8);
                     }
-                }
-
-                .artikel_text {
-                    font-size: calc(var(--text-base) * 0.8);
                 }
             }
         }
-
 
 
 
@@ -262,12 +379,40 @@
                         width: 34%;
                     }
                 }
+
+                .staff_grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    /* Tablet: 2 Spalten → 2x2 */
+                }
+
+                .home-section-wide {
+                    .kontakt_grid {
+                        grid-template-columns: repeat(3, 1fr);
+
+                        .kontakt_card {
+
+                            .kontakt_card_oben {
+
+                                .kontakt_card_logo {
+                                    flex: 0 0 40px;
+                                    width: 40px;
+                                    height: 40px;
+                                }
+
+                                .kontakt_card_text {
+                                    font-size: 0.8rem;
+
+                                    .kontakt_title {
+                                        font-size: 1.4rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
-            .staff_grid {
-                grid-template-columns: repeat(2, 1fr);
-                /* Tablet: 2 Spalten → 2x2 */
-            }
+
         }
 
         @media (min-width: 1024px) {
@@ -283,12 +428,42 @@
                         width: 50%;
                     }
                 }
+
+                .staff_grid {
+                    grid-template-columns: repeat(4, 1fr);
+                    /* Desktop: 4 Spalten → 4x1 */
+                }
+
+                .home-section-wide {
+                    .kontakt_grid {
+                        grid-template-columns: repeat(3, 1fr);
+
+                        .kontakt_card {
+
+                            .kontakt_card_oben {
+
+                                .kontakt_card_logo {
+                                    flex: 0 0 64px;
+                                    width: 64px;
+                                    height: 64px;
+                                }
+
+                                .kontakt_card_text {
+                                    font-size: 1rem;
+
+                                    .kontakt_title {
+                                        font-size: 1.5rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
-            .staff_grid {
-                grid-template-columns: repeat(4, 1fr);
-                /* Desktop: 4 Spalten → 4x1 */
-            }
+
+
+
         }
     </style>
 @endsection
@@ -300,6 +475,9 @@
 @section('content')
     <hero>
         <h1 style="display: none;">Willkommen bei Steelcitynails</h1>
+
+        {{-- WILLKOMMEN NailCare --}}
+
         <section id="home-angebot" class="home-section">
             <div class="home-section-block">
                 <div class="textseite">
@@ -332,6 +510,8 @@
     {{-- Die Links führen nur zu Ankern auf der Home-Seite --}}
     {{-- Der Buchen-Button Routet zu einer Seite mit Iframe SuperSass-Buchung  --}}
 
+    {{-- AUSGEWÄHLTE SERVICES Angebot --}}
+
     <section id="home-angebot" class="home-section">
         <div class="home-section-wide">
             <h2>Angebot</h2>
@@ -362,6 +542,8 @@
         </div>
     </section>
 
+    {{-- ÜBER MICH --}}
+
     <section id="home-ueber-mich" class="home-section">
         <div class="home-section-block">
             <div class="textseite">
@@ -383,7 +565,7 @@
                     </div>
                 </div>
                 <div style="margin-top: 1rem;">
-                    <a href="{{ route('buchen') }}" class="btn">Erfahre mehr</a>
+                    <a href="{{ route('about') }}" class="btn">Erfahre mehr</a>
                 </div>
             </div>
             <div class="bildseite">
@@ -393,8 +575,18 @@
                 </picture>
             </div>
         </div>
-        <div class="staff_grid">
 
+        <div class="top-link">
+            <a href="#top">
+                <x-toparrow />
+            </a>
+        </div>
+    </section>
+
+    {{-- STAFF --}}
+
+    <section id="staff" class="home-section">
+        <div class="staff_grid">
             <div class="staff_card">
                 <div class="staff_card_oben">
                     <div class="staff_card_logo">
@@ -405,7 +597,7 @@
                         Wir benutzen Einwegmaterialien und desifizieren unsere Werkzeuge.
                     </div>
                 </div>
-                <a href="#more" class="staff_card_link">Mehr Info</a>
+                <a href="{{ route('produkte') }}#Tools" class="staff_card_link">Mehr Info</a>
             </div>
 
             <div class="staff_card">
@@ -418,7 +610,7 @@
                         Deine ausgebildeten Artists arbeiten schnell und sicher.
                     </div>
                 </div>
-                <a href="#more" class="staff_card_link">Mehr Info</a>
+                <a href="{{ route('about') }}#zertifikate" class="staff_card_link">Mehr Info</a>
             </div>
 
             <div class="staff_card">
@@ -431,7 +623,7 @@
                         Du kannst aus einer großen Palette von Farben und Materialien wählen.
                     </div>
                 </div>
-                <a href="#more" class="staff_card_link">Mehr Info</a>
+                <a href="{{ route('produkte') }}#Colors" class="staff_card_link">Mehr Info</a>
             </div>
 
             <div class="staff_card">
@@ -445,7 +637,7 @@
                         Nail:Code, Toni, Beni Durrer, etc.
                     </div>
                 </div>
-                <a href="#more" class="staff_card_link">Mehr Info</a>
+                <a href="{{ route('produkte') }}#Brands" class="staff_card_link">Mehr Info</a>
             </div>
 
         </div>
@@ -456,8 +648,20 @@
         </div>
     </section>
 
+    {{-- NAGELDESIGN --}}
+
     <section id="home-nageldesign" class="home-section">
-        <div class="home-section-block" style="flex-direction: row-reverse;">
+        <div class="home-section-block home-section-block-reverse">
+            <div class="bildseite">
+                {{-- <picture class="hero_img" style="height: 630px;">
+                    <source srcset="{{ asset('images/Bild01.avif') }}" type="image/avif">
+                    <img src="{{ asset('images/Bild01.png') }}" alt="Steelcitynails Welcome Picture">
+                </picture> --}}
+                {{-- Neuer Container für das Hintergrundbild --}}
+                <div class="bg-image-container" style="background-image: url('{{ asset('images/Bild01.png') }}');">
+                    <a href="{{ route('galerie') }}#nageldesign" class="btn overlay-btn">Zur Galerie</a>
+                </div>
+            </div>
             <div class="textseite">
                 <h2>Nageldesign</h2>
                 <h3>Preise Nailart</h3>
@@ -511,11 +715,25 @@
 
                 </div>
             </div>
-            <div class="bildseite">
-                <picture class="hero_img" style="height: 630px;">
-                    <source srcset="{{ asset('images/Bild01.avif') }}" type="image/avif">
-                    <img src="{{ asset('images/Bild01.png') }}" alt="Steelcitynails Welcome Picture">
-                </picture>
+        </div>
+        <div class="top-link">
+            <a href="#top">
+                <x-toparrow />
+            </a>
+        </div>
+    </section>
+
+    {{-- PRODUKTE --}}
+
+    <section id="home-produkte" class="home-section">
+        <div class="home-section-block">
+            <div class="nail_produkte">
+                <h2>Produkte</h2>
+                <h3>Produkte <br> für Ihre Nagelpflege</h3>
+                Kaufen Sie Feilen, Buffer, Pflegeöl bei und im Salon.
+                <div style="margin-top: 3rem;">
+                    <a href="{{ route('produkte') }}" class="btn">Erfahre mehr</a>
+                </div>
             </div>
         </div>
         <div class="top-link">
@@ -524,18 +742,9 @@
             </a>
         </div>
     </section>
-    <section id="home-produkte" class="home-section">
-        <div class="home-section-block">
-            <div class="nail_produkte">
-                <h2>Produkte</h2>
-                <h3>Produkte <br> für Ihre Nagelpflege</h3>
-                Kaufen Sie Feilen, Buffer, Pflegeöl bei und im Salon.
-                <div style="margin-top: 3rem;">
-                    <a href="{{ route('buchen') }}" class="btn">Erfahre mehr</a>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    {{-- VISAGISTIK --}}
+
     <section id="home-visagistik" class="home-section">
         <div class="home-section-block">
             <div class="textseite">
@@ -592,35 +801,17 @@
                 </div>
             </div>
             <div class="bildseite">
-                <picture class="hero_img" style="height: 630px;">
+                {{-- <picture class="hero_img" style="height: 630px;">
                     <source srcset="{{ asset('images/Bild06.avif') }}" type="image/avif">
                     <img src="{{ asset('images/Bild06.png') }}" alt="Steelcitynails Welcome Picture"
                         style="transform: scaleX(-1);  display: inline-block;">
-                </picture>
+                </picture> --}}
+                <div class="bg-image-container"
+                    style="background-image: url('{{ asset('images/Bild06.png') }}'); transform: scaleX(-1);">
+                    <a href="{{ route('galerie') }}#visagistik" class="btn overlay-btn"
+                        style="transform: translateX(-50%) scaleX(-1);">Zur Galerie</a>
+                </div>
             </div>
-        </div>
-        <div class="top-link">
-            <a href="#top">
-                <x-toparrow />
-            </a>
-        </div>
-    </section>
-    <section id="home-rezensionen" class="home-section">
-        <div class="home-section-block">
-            <h2>Kundenmeinungen</h2>
-        </div>
-    </section>
-    <section id="home-kontakt" class="home-section">
-        <div class="home-section-block" style="flex-direction: row-reverse;">
-            <div class="textseite">
-                <h2>Kontakt</h2>
-                Anfahrt<br>
-                Tabelle:
-                Adresse, Telefon, Email<br>
-                SozialMedia<br>
-                Galerieauszug
-            </div>
-            <div class="bildseite">Bild</div>
         </div>
         <div class="top-link">
             <a href="#top">
@@ -629,6 +820,105 @@
         </div>
     </section>
 
+    {{-- KUNDENMEINUNGEN --}}
+
+    <section id="home-rezensionen" class="home-section">
+        <div class="home-section-wide">
+            <h2>Kundenmeinungen</h2>
+        </div>
+        <div class="top-link">
+            <a href="#top">
+                <x-toparrow />
+            </a>
+        </div>
+    </section>
+
+
+    {{-- KONTAKT BEREICH --}}
+
+    <section id="home-kontakt" class="home-section">
+        <div class="home-section-wide">
+            <h2>Kontakt</h2>
+            <h3>Kontaktiere uns jetzt</h3>
+            <h4>Vergessen Sie nicht, einen Termin zu vereinbaren, um den besten Service zu erhalten!</h4>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d153.038554886753!2d14.650748686661!3d52.14129032947743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4707b87b68f34f3f%3A0x346d9e368add7b69!2sSteelcitynails%20Nageldesign%20und%20MakeUp!5e0!3m2!1sde!2sde!4v1794924509379!5m2!1sde!2sde"
+                width="100%" height="240" style="border: 0.66rem solid white; display: block" allowfullscreen=""
+                loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+
+            {{-- KONTAKT / Cards --}}
+
+            <div class="kontakt_grid">
+
+                <div class="kontakt_card">
+                    <div class="kontakt_card_oben">
+                        <div class="kontakt_card_logo">
+                            <x-scissor />
+                        </div>
+                        <div class="kontakt_card_text">
+                            <span class="kontakt_title">Adresse</span>
+                            Fröbelring Passage 24/25 <br>
+                            15890 Eisenhüttenstadt
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kontakt_card">
+                    <div class="kontakt_card_oben">
+                        <div class="kontakt_card_logo">
+                            <x-fingernail1 />
+                        </div>
+                        <div class="kontakt_card_text">
+                            <span class="kontakt_title">Telefon</span>
+                            <x-encrypt-phone phone="+49 157 850 672 49" class="linkgeschuetzt" /> <br>
+                            <div class="nur_text">(nur Textnachrichten in WhatsApp oder SMS)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kontakt_card">
+                    <div class="kontakt_card_oben">
+                        <div class="kontakt_card_logo">
+                            <x-nail-polish />
+                        </div>
+                        <div class="kontakt_card_text">
+                            <span class="kontakt_title">Email</span>
+                            <x-encrypt-email email="studio@steelcitynails.de" class="linkgeschuetzt" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="top-link">
+            <a href="#top">
+                <x-toparrow />
+            </a>
+        </div>
+    </section>
+
+    {{-- GALERIE SLIDER --}}
+
+    <section id="home-kontakt" class="home-section">
+        <div class="home-section-wide">
+            <div class="gallery-link-wrapper">
+                {{-- Der unsichtbare Link --}}
+                <a href="{{ route('galerie') }}" class="gallery-overlay-link" aria-label="Zur gesamten Galerie"></a>
+
+                <x-gallery-slider id="gallerySlider" :images="[
+                    ['image' => asset('images/Bild01.png'), 'alt' => 'Maniküre Beispiel'],
+                    ['image' => asset('images/Bild02.png'), 'alt' => 'Nail Art Beispiel'],
+                    ['image' => asset('images/Bild03.png'), 'alt' => 'Maniküre Beispiel'],
+                    ['image' => asset('images/Bild04.png'), 'alt' => 'Nail Art Beispiel'],
+                    ['image' => asset('images/Bild05.png'), 'alt' => 'Maniküre Beispiel'],
+                    ['image' => asset('images/Bild06.png'), 'alt' => 'Nail Art Beispiel'],
+                ]" :per-view="4" :per-view-md="3"
+                    :per-view-sm="2" :space="15" />
+            </div>
+        </div>
+    </section>
 
     {{-- Footer hat: AGB, Impressum, Datenschutz, FAQ,Sitemap, Cokie Einstellungen ändern --}}
 @endsection

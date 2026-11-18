@@ -8,7 +8,7 @@
         Fröbelringpassage 24/25, 15890 Eisenhüttenstadt
     </div>
     <div class="footer-kontakt">
-        WhatsApp oder SMS, keine Anrufe oder Sprachnachrichten
+        WhatsApp oder SMS, bitte keine Anrufe oder Sprachnachrichten
     </div>
     <div class="footer-agb-imp-dat">
         <a href="{{ route('agb') }}">AGB</a>

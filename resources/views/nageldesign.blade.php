@@ -12,7 +12,9 @@
 @endsection
 
 @section('content')
-    <h1> Nageldesign </h1>
-
+<div class="standard-section">
+    <h1 style="display: none;"> Nageldesign </h1>
+    <h2> Nageldesign </h2>
+</div>
 
 @endsection

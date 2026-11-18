@@ -243,9 +243,7 @@
     <div class="aside-card" aria-label="Studio Regeln">
         <h2>STUDIO REGELN</h2>
         <ul class="rules-list">
-            <li>Keine Tattoos / Piercings ohne Termin</li>
-            <li>Ausweis mitbringen (ab 18)</li>
-            <li>Keine Getränke am Arbeitsplatz</li>
+            <li>Kein Nageldesign / MakeUp ohne Termin</li>
         </ul>
     </div>
 @endsection

@@ -1,5 +1,5 @@
 .div-contact-line {
-    width: 600px;
+    width: content-fit;
     display: block;
     justify-content: center;
     align-items: center;
