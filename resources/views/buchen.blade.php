@@ -41,7 +41,70 @@
                 }
             }
         }
+
+        .qrcontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+            cursor: pointer;
+            /* Zeigt an, dass es klickbar ist */
+
+            /* Das SVG soll standardmäßig 10rem groß sein */
+            .qr-image-wrapper svg {
+                width: 10rem;
+                height: 10rem;
+                transition: transform 0.3s ease;
+                /* Weicher Übergang */
+            }
+
+            /* Wenn der Container die Klasse "zoomed" hat, wird das SVG groß */
+            .qr-image-wrapper.zoomed svg {
+                /* Positionierung: Fixed bleibt beim Scrollen im Bild */
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 90vmin;
+                /* 90% der kleineren Bildschirmseite */
+                height: 90vmin;
+                z-index: 9999;
+                background: white;
+                /* Hintergrund, damit es nicht durchsichtig ist */
+                padding: 1rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+                cursor: zoom-out;
+            }
+
+            /* Optional: Ein dunkler Hintergrund beim Zoomen */
+            .qr-image-wrapper.zoomed::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 9998;
+            }
+        }
     </style>
+@endsection
+
+@section('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const qrTrigger = document.getElementById('qr-trigger');
+
+            if (qrTrigger) {
+                qrTrigger.addEventListener('click', function() {
+                    // Schaltet die CSS-Klasse "zoomed" ein und aus
+                    this.classList.toggle('zoomed');
+                });
+            }
+        });
+    </script>
 @endsection
 
 @section('content')
@@ -50,11 +113,6 @@
         <h2>Termin buchen</h2>
         <h3>Termine für Nageldesign</h3>
         <div class="buchungsdiv">
-
-
-
-
-
 
             <p>Hier kannst Du direkt auf unserer Website buchen.</p>
             <script src="https://cdn.supersaas.net/widget.js"></script>
@@ -80,10 +138,15 @@
                 <ol style="list-style-type: decimal;">
                     <li>Logge dich in dein Benutzerkonto ein oder erstelle ein Neues.</li>
                     <li>Wähle, was du buchen möchtest: Nageldesign, Nagelkauer-Behandlung oder Crazy Nails.</li>
-                    <li>Du siehst nun alle freien Termine. Wähle den aus, der dir am besten passt,<br> 
+                    <li>Du siehst nun alle freien Termine. Wähle den aus, der dir am besten passt,<br>
                         du bekommst eine Bestätigungsemail.</li>
                     <li>Viel Spaß!</li>
                 </ol>
+            </div>
+            <div class="qrcontainer" id="qr-container">
+                <div class="qr-image-wrapper" id="qr-trigger" title="Klicken zum Vergrößern">
+                    <x-qr_buchung_supersaas />
+                </div>
             </div>
         </div>
         <h3>Visagistik, Pediküre usw:</h3>
